@@ -1,26 +1,244 @@
 @import "tailwindcss";
 
+@theme {
+  /* Color Palette - Warm Neutrals with Gold */
+  --color-cream: #FAF8F5;
+  --color-sand: #E8E4DE;
+  --color-stone: #D4CFC7;
+  --color-charcoal: #2C2825;
+  --color-espresso: #1A1715;
+  --color-gold: #C9A962;
+  --color-gold-light: #D4BC7C;
+  --color-terracotta: #8B6F5C;
+
+  /* Typography Scale */
+  --font-display: var(--font-cormorant), Georgia, serif;
+  --font-body: var(--font-inter), system-ui, sans-serif;
+}
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #FAF8F5;
+  --foreground: #2C2825;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+* {
+  box-sizing: border-box;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-body);
+  font-weight: 400;
+  line-height: 1.7;
+  letter-spacing: 0.01em;
+  overflow-x: hidden;
+}
+
+/* Custom Selection */
+::selection {
+  background: var(--color-gold);
+  color: var(--color-espresso);
+}
+
+/* Smooth Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-cream);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-stone);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-terracotta);
+}
+
+/* Typography Classes */
+.font-display {
+  font-family: var(--font-display);
+}
+
+.font-body {
+  font-family: var(--font-body);
+}
+
+/* Heading Styles */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  font-weight: 400;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+/* Link Styles */
+a {
+  transition: all 0.3s ease;
+}
+
+/* Button Base */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 2.5rem;
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+}
+
+.btn-primary {
+  background: var(--color-charcoal);
+  color: var(--color-cream);
+  border: 1px solid var(--color-charcoal);
+}
+
+.btn-primary:hover {
+  background: transparent;
+  color: var(--color-charcoal);
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--color-charcoal);
+  border: 1px solid var(--color-charcoal);
+}
+
+.btn-outline:hover {
+  background: var(--color-charcoal);
+  color: var(--color-cream);
+}
+
+.btn-gold {
+  background: var(--color-gold);
+  color: var(--color-espresso);
+  border: 1px solid var(--color-gold);
+}
+
+.btn-gold:hover {
+  background: var(--color-gold-light);
+  border-color: var(--color-gold-light);
+}
+
+/* Decorative Elements */
+.divider {
+  width: 1px;
+  height: 60px;
+  background: var(--color-stone);
+  margin: 0 auto;
+}
+
+.dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--color-gold);
+}
+
+/* Animation Utilities */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 1s ease forwards;
+}
+
+.animate-slide-up {
+  animation: slideUp 0.8s ease forwards;
+}
+
+.animate-slide-down {
+  animation: slideDown 0.8s ease forwards;
+}
+
+/* Text Gradient */
+.text-gradient {
+  background: linear-gradient(135deg, var(--color-charcoal) 0%, var(--color-terracotta) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Section Padding */
+.section-padding {
+  padding: 8rem 2rem;
+}
+
+@media (min-width: 768px) {
+  .section-padding {
+    padding: 12rem 4rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .section-padding {
+    padding: 16rem 6rem;
+  }
+}
+
+/* Container */
+.container-narrow {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.container-wide {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* Image Overlay */
+.image-overlay {
+  position: relative;
+}
+
+.image-overlay::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 0%, rgba(26, 23, 21, 0.4) 100%);
+  pointer-events: none;
+}
+
+/* Parallax Container */
+.parallax-container {
+  overflow: hidden;
+  position: relative;
 }
