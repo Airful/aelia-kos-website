@@ -7,28 +7,44 @@ import AnimatedSection from "@/components/AnimatedSection";
 
 const principles = [
   {
-    title: "Business as Structure",
+    title: "Read the Field First",
     description:
-      "Business is not a vehicle for personal growth. It is a structural force — one that shapes identity, culture, and collective direction.",
+      "Before anything else, I orient to what is actually present — not what should be there, or what worked elsewhere. Every person, every business, every moment of transition has its own living intelligence. That is where we begin.",
   },
   {
-    title: "Environment Over Method",
+    title: "Design the Container",
     description:
-      "What I work with is how environments are designed. Once the environment is coherent, people, decisions, capital, and timing reorganize.",
+      "Once the right conditions are in place — the right people, the right structure, the right energetics — decisions, capital, and timing reorganize on their own. I don\u2019t push the river. I design the riverbed.",
   },
   {
-    title: "Placement Over Process",
+    title: "Allow Emergence Through Presence",
     description:
-      "There is no step-by-step path here. There is recognition of where one stands, and clarity about what follows from that position.",
+      "There is no prescribed path. What comes through enhanced presence and honest truth is always more precise than any method. My role is to hold the field steady enough for that to happen — and to recognize what is emerging before it has fully taken form.",
   },
 ];
 
-const background = [
-  "Lived and worked across multiple continents",
-  "Built and exited companies in diverse industries",
-  "Navigated significant personal and financial transitions",
-  "Studied with teachers across spiritual traditions",
-  "Held advisory roles in conscious enterprise development",
+const pathways = [
+  {
+    title: "Immersive Experiences",
+    description:
+      "Group retreats and private activations designed for deep recalibration through real life immersion.",
+    href: "mailto:aelia@aeliakos.com",
+    cta: "Inquire",
+  },
+  {
+    title: "Universe Portal",
+    description:
+      "The living online membership. The most direct way to enter the field and access the Universe Club AI synchronicity engine for essence-aligned connections across the globe.",
+    href: "/portal",
+    cta: "Enter the Portal",
+  },
+  {
+    title: "Private 1:1 Mentorship",
+    description:
+      "For those ready to work with me directly, over time, on the full arc of what they are building.",
+    href: "mailto:aelia@aeliakos.com",
+    cta: "Begin a Conversation",
+  },
 ];
 
 export default function About() {
@@ -59,10 +75,10 @@ export default function About() {
               className="text-xl text-[#7a7068] leading-relaxed"
               style={{ fontFamily: "var(--font-serif)" }}
             >
-              Working at the intersection of
+              I&apos;m Aelia Kos — and if you&apos;re reading this,
               <br />
               <strong className="text-[#1a1510]">
-                business, structure, and long-cycle change
+                something already drew you in
               </strong>
               .
             </p>
@@ -88,49 +104,80 @@ export default function About() {
             </AnimatedSection>
 
             <AnimatedSection direction="right">
-              <p
-                className="text-2xl text-[#1a1510] leading-relaxed mb-8"
-                style={{ fontFamily: "var(--font-serif)" }}
-              >
-                I work with individuals and organizations at thresholds of
-                significant transition.
+              <p className="text-[15px] leading-[1.85] font-light text-[#7a7068] mb-6">
+                I&apos;ve lived and built across continents, navigated my own
+                significant thresholds, and spent over a decade designing the
+                conditions under which people, businesses, and visions become
+                what they were always meant to be.
               </p>
 
               <p className="text-[15px] leading-[1.85] font-light text-[#7a7068] mb-6">
-                My work concerns how environments are designed — and how people,
-                decisions, capital, and timing reorganize once the environment
-                is coherent.
+                I know this terrain — not from theory, but from having crossed
+                it myself, more than once, in more than one life.
               </p>
 
               <p className="text-[15px] leading-[1.85] font-light text-[#7a7068] mb-6">
-                I am not interested in growth for its own sake, nor in business
-                as optimization. What I hold is a capacity to see structure
-                where others see circumstance — and to work with what is
-                actually present, rather than what is desired.
+                What I do now is not separate from what I&apos;ve lived. The
+                architecture training, the Olympic operations, the retreats in
+                the mountains, the research into water and consciousness, the
+                companies built in different countries and different states of
+                self — all of it is present in the room when we work together.
               </p>
 
               <p className="text-[15px] leading-[1.85] font-light text-[#7a7068]">
-                What I offer today is not a method. It is a{" "}
-                <strong className="text-[#1a1510]">field</strong> — informed by
-                lived decisions across cultures, industries, and ways of life.
+                I work at the intersection of{" "}
+                <strong className="text-[#1a1510]">
+                  business, spirituality, and the effortless embodiment of pure
+                  potentiality
+                </strong>
+                . And when the right people enter this field, something in them
+                recognizes it immediately — not as a new idea, but as a reality
+                they were already moving toward.
               </p>
             </AnimatedSection>
           </div>
         </div>
       </section>
 
-      {/* Working Principles */}
+      {/* How I Work */}
       <section className="py-24 px-6 bg-[#e8e4df]">
         <div className="max-w-[1000px] mx-auto">
-          <AnimatedSection className="text-center mb-16">
+          <AnimatedSection className="mb-16">
             <p className="text-[9px] tracking-[5px] uppercase text-[#A9540F] mb-6">
               How I Work
             </p>
             <p
-              className="text-2xl text-[#1a1510]"
+              className="text-2xl text-[#1a1510] leading-relaxed max-w-[680px] mb-6"
               style={{ fontFamily: "var(--font-serif)" }}
             >
-              Three principles inform everything I do.
+              Every engagement begins the same way: I read the field.
+            </p>
+            <p className="text-[15px] leading-[1.85] font-light text-[#7a7068] max-w-[680px] mb-6">
+              Not the business plan, not the strategy deck — the actual field of
+              potential that exists around you and what you&apos;re building.
+              What&apos;s alive in it, what&apos;s blocked, what&apos;s ready to
+              move.
+            </p>
+            <p className="text-[15px] leading-[1.85] font-light text-[#7a7068] max-w-[680px] mb-6">
+              From there, I design the container — the right conditions, the
+              right connections, the right environment — for what is genuinely
+              possible to emerge without forcing it.
+            </p>
+            <p className="text-[15px] leading-[1.85] font-light text-[#7a7068] max-w-[680px]">
+              This is where my background in architecture becomes something more
+              than a credential. I was trained to see structures before they
+              exist — to sense what a space wants to become and design toward
+              that, rather than imposing a predetermined form. I bring exactly
+              that to the work of conscious business.
+            </p>
+          </AnimatedSection>
+
+          <AnimatedSection className="text-center mb-12">
+            <p
+              className="text-xl text-[#1a1510]"
+              style={{ fontFamily: "var(--font-serif)" }}
+            >
+              Three things shape everything I do.
             </p>
           </AnimatedSection>
 
@@ -175,23 +222,48 @@ export default function About() {
                 className="text-2xl text-[#f2ede8] leading-relaxed mb-8"
                 style={{ fontFamily: "var(--font-serif)" }}
               >
-                The path that led here is not linear.
+                The path that led me here is not linear.
+              </p>
+
+              <p className="text-[15px] leading-[1.85] font-light text-[#7a7068] mb-6">
+                I don&apos;t share it as a list of credentials. I share it
+                because the work I do is inseparable from what I&apos;ve lived.
+                Every transition I facilitate in others, I have moved through
+                myself.
+              </p>
+
+              <p className="text-[15px] leading-[1.85] font-light text-[#7a7068] mb-6">
+                I trained as an architect and spent years designing spaces —
+                physical, digital, and energetic — where transformation could
+                actually land.
+              </p>
+
+              <p className="text-[15px] leading-[1.85] font-light text-[#7a7068] mb-6">
+                I managed large-scale operations across three Olympic Games,
+                working with complex systems, intercultural teams, and decisions
+                made under real pressure.
+              </p>
+
+              <p className="text-[15px] leading-[1.85] font-light text-[#7a7068] mb-6">
+                I&apos;ve built companies across the Americas, Europe and MENA,
+                lived and worked across countries, and spent a decade designing
+                business frameworks, immersive experiences, and mentorship
+                containers for collective intelligence.
               </p>
 
               <p className="text-[15px] leading-[1.85] font-light text-[#7a7068] mb-8">
-                I do not share biography as qualification. I share it because
-                the work I do is inseparable from what I have lived. Every
-                structure I recognize in others, I have moved through myself.
+                Alongside that: studies across spiritual traditions, research
+                into consciousness and water, and years of navigating
+                significant personal and financial transitions of my own.
               </p>
 
-              <div className="space-y-4">
-                {background.map((item, index) => (
-                  <div key={index} className="flex items-start gap-4">
-                    <div className="w-1 h-1 rounded-full bg-[#A9540F] mt-2.5 shrink-0" />
-                    <p className="text-[#f2ede8] text-[15px] font-light">{item}</p>
-                  </div>
-                ))}
-              </div>
+              <p
+                className="text-[15px] leading-[1.85] text-[#f2ede8] italic"
+                style={{ fontFamily: "var(--font-serif)" }}
+              >
+                This is not a background assembled for impressiveness. It is the
+                actual ground from which this work grows.
+              </p>
             </AnimatedSection>
 
             <AnimatedSection direction="right">
@@ -218,32 +290,46 @@ export default function About() {
           </AnimatedSection>
 
           <AnimatedSection delay={0.1}>
+            <p className="text-[15px] leading-[1.85] font-light text-[#7a7068] mb-10 text-left">
+              I&apos;ve watched too many gifted people quietly believe that
+              choosing depth means giving up scale — that pursuing soul means
+              accepting less. I don&apos;t believe that. I&apos;ve never
+              believed that.
+            </p>
+          </AnimatedSection>
+
+          <AnimatedSection delay={0.15}>
             <p
-              className="text-[clamp(22px,3vw,32px)] text-[#1a1510] leading-relaxed mb-12"
+              className="text-[clamp(22px,3vw,32px)] text-[#1a1510] leading-relaxed mb-10"
               style={{ fontFamily: "var(--font-serif)" }}
             >
-              I believe that wealth and spiritual depth are not opposites.
+              Wealth and spiritual depth are not opposites.
             </p>
           </AnimatedSection>
 
           <AnimatedSection delay={0.2}>
-            <div
-              className="text-lg text-[#7a7068] space-y-4 mb-12"
-              style={{ fontFamily: "var(--font-serif)" }}
-            >
+            <div className="text-[15px] leading-[1.85] font-light text-[#7a7068] space-y-5 mb-10 text-left">
               <p>
-                I believe that business, when understood structurally, is one of
-                the most powerful vehicles for transformation available to us.
+                They become so only when one is pursued at the expense of the
+                other, or when neither has been fully understood. When
+                integrated, they amplify each other in ways that neither can
+                achieve alone.
               </p>
               <p>
-                I believe that clarity is not something we arrive at through
-                process, but something that reveals itself when the right
-                conditions are met.
+                I also believe — and this has been proven to me across years and
+                contexts — that the right environment matters more than the
+                right method. Most people don&apos;t need a better strategy.
+                They need conditions in which their own truth can surface. They
+                need a field liberated enough to exist differently in. They need
+                the friction removed between who they are and who they are
+                becoming.
               </p>
+              <p>That is what I create.</p>
               <p>
-                I believe that most people are far closer to their own truth than
-                they recognize — and that what is needed is not more guidance, but
-                the right container for what already knows.
+                And I believe that most people are far closer to their own next
+                level than they realize. What stands between them and it is
+                rarely lack of knowledge or capability. It is the absence of an
+                environment that makes the truth a lived reality.
               </p>
             </div>
           </AnimatedSection>
@@ -253,7 +339,7 @@ export default function About() {
               className="text-xl text-[#1a1510]"
               style={{ fontFamily: "var(--font-serif)" }}
             >
-              This is the field I hold.
+              This is the work and the field I hold.
             </p>
           </AnimatedSection>
         </div>
@@ -273,7 +359,7 @@ export default function About() {
               className="text-2xl text-[#f2ede8] leading-relaxed mb-8"
               style={{ fontFamily: "var(--font-serif)" }}
             >
-              I do not work with everyone.
+              I don&apos;t work with everyone.
             </p>
           </AnimatedSection>
 
@@ -282,15 +368,18 @@ export default function About() {
               className="text-lg text-[#7a7068] mb-4"
               style={{ fontFamily: "var(--font-serif)" }}
             >
-              Not because I am selective for exclusivity, but because the work I
-              do requires a certain readiness.
+              Not because of exclusivity for its own sake — but because this
+              work requires a certain readiness. Not perfection, not having it
+              all figured out. Just the honest recognition that something in
+              your current reality is ready to shift, and that you are willing
+              to move with it.
             </p>
             <p
               className="text-lg text-[#7a7068] mb-8"
               style={{ fontFamily: "var(--font-serif)" }}
             >
-              If what is written here resonates, it is likely because you
-              already sense the field I describe.
+              If what is written here resonates with you, it&apos;s likely
+              because you are already approaching the field I&apos;m describing.
             </p>
           </AnimatedSection>
 
@@ -299,51 +388,50 @@ export default function About() {
               className="text-xl text-[#f2ede8]"
               style={{ fontFamily: "var(--font-serif)" }}
             >
-              If so, what remains is entry — not persuasion.
+              If so, what remains is entry through recognition.
             </p>
           </AnimatedSection>
         </div>
       </section>
 
-      {/* CTA */}
+      {/* Ways to Begin */}
       <section className="py-24 px-6 bg-[#dedad4]">
-        <div className="max-w-[680px] mx-auto text-center">
-          <AnimatedSection>
+        <div className="max-w-[1000px] mx-auto">
+          <AnimatedSection className="text-center mb-6">
             <p className="text-[9px] tracking-[5px] uppercase text-[#A9540F] mb-8">
               Ways to Begin
             </p>
           </AnimatedSection>
 
-          <AnimatedSection delay={0.1}>
+          <AnimatedSection delay={0.1} className="text-center mb-14">
             <p
-              className="text-xl text-[#1a1510] mb-12"
+              className="text-xl text-[#1a1510]"
               style={{ fontFamily: "var(--font-serif)" }}
             >
-              Several structures exist depending on where you stand.
+              Depending on where you stand, three pathways are available.
             </p>
           </AnimatedSection>
 
-          <AnimatedSection delay={0.2}>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center flex-wrap">
-              <a href="/portal" className="btn-choose">
-                Universe Portal
-              </a>
-              <a href="mailto:aelia@aeliakos.com" className="btn-ghost">
-                Begin a Conversation
-              </a>
-            </div>
-          </AnimatedSection>
-        </div>
-      </section>
-
-      {/* Company Info */}
-      <section className="py-12 bg-[#e8e4df] border-t border-[rgba(26,21,16,0.08)]">
-        <div className="max-w-[680px] mx-auto text-center px-6">
-          <p className="text-sm text-[#7a7068] font-light">
-            Mindful Experience GmbH
-            <br />
-            Zugerstrasse 32, 6340 Baar, Switzerland
-          </p>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
+            {pathways.map((pathway, index) => (
+              <AnimatedSection key={pathway.title} delay={0.2 + index * 0.1}>
+                <div className="p-8 border border-[rgba(26,21,16,0.1)] h-full flex flex-col">
+                  <h3
+                    className="text-xl text-[#1a1510] mb-4"
+                    style={{ fontFamily: "var(--font-serif)" }}
+                  >
+                    {pathway.title}
+                  </h3>
+                  <p className="text-[#7a7068] text-sm leading-relaxed font-light mb-8 flex-1">
+                    {pathway.description}
+                  </p>
+                  <a href={pathway.href} className="btn-ghost self-start">
+                    {pathway.cta}
+                  </a>
+                </div>
+              </AnimatedSection>
+            ))}
+          </div>
         </div>
       </section>
 

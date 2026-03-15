@@ -303,9 +303,8 @@ export default function Home() {
               precision to the work of building from Soul — not just strategy.
             </p>
             <p>
-              I&apos;ve founded Mindful Experience GmbH (Switzerland) and
-              UniVerse Club (Dubai), a global movement blending wealth,
-              spirituality, AI and conscious business.
+              I&apos;ve founded UniVerse Club (Dubai), a global movement
+              blending wealth, spirituality, AI and conscious business.
             </p>
             <p>
               My clients are investors, founders, and super-connectors who sense
