@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import Image from "next/image";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import AnimatedSection from "@/components/AnimatedSection";
@@ -33,89 +33,85 @@ const background = [
 
 export default function About() {
   return (
-    <main className="min-h-screen bg-[#FAF8F5]">
+    <main className="min-h-screen bg-[#e8e4df]">
       <Navigation />
 
-      {/* Hero Section */}
+      {/* Hero */}
       <section className="min-h-[80vh] flex items-center justify-center pt-32 pb-20">
-        <div className="container-narrow text-center px-6">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-          >
-            <p className="text-xs tracking-[0.3em] uppercase text-[#C9A962] mb-8">
+        <div className="max-w-[800px] mx-auto text-center px-6">
+          <div className="opacity-0 animate-[riseIn_1.4s_0.1s_ease_forwards]">
+            <p className="text-[9px] tracking-[5px] uppercase text-[#A9540F] mb-8">
               About
             </p>
-          </motion.div>
+          </div>
 
-          <motion.h1
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="font-display text-5xl md:text-6xl lg:text-7xl text-[#2C2825] mb-8"
+          <h1
+            className="text-[clamp(48px,8vw,80px)] font-normal text-[#1a1510] mb-8 leading-[1] opacity-0 animate-[riseIn_1.4s_0.3s_ease_forwards]"
+            style={{ fontFamily: "var(--font-serif)" }}
           >
             Aelia
             <br />
-            <span className="italic text-[#8B6F5C]">Kos</span>
-          </motion.h1>
+            <em className="italic text-[#A9540F]">Kos</em>
+          </h1>
 
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            className="max-w-2xl mx-auto"
-          >
-            <p className="font-display text-xl text-[#8B6F5C] leading-relaxed">
+          <div className="opacity-0 animate-[riseIn_1.4s_0.5s_ease_forwards] max-w-2xl mx-auto">
+            <p
+              className="text-xl text-[#7a7068] leading-relaxed"
+              style={{ fontFamily: "var(--font-serif)" }}
+            >
               Working at the intersection of
               <br />
-              <strong className="text-[#2C2825]">
+              <strong className="text-[#1a1510]">
                 business, structure, and long-cycle change
               </strong>
               .
             </p>
-          </motion.div>
+          </div>
         </div>
       </section>
 
       {/* Portrait & Introduction */}
-      <section className="section-padding bg-[#E8E4DE]">
-        <div className="container-wide px-6 lg:px-12">
+      <section className="py-24 px-6 bg-[#dedad4]">
+        <div className="max-w-[1000px] mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-            {/* Portrait Placeholder */}
             <AnimatedSection direction="left">
-              <div className="aspect-[3/4] bg-[#D4CFC7] relative overflow-hidden max-w-md mx-auto lg:mx-0">
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <span className="font-display text-6xl text-[#8B6F5C]/30">
-                    AK
-                  </span>
-                </div>
+              <div className="relative max-w-md mx-auto lg:mx-0">
+                <Image
+                  src="/aelia-photo.jpg"
+                  alt="Aelia Kos"
+                  width={400}
+                  height={533}
+                  className="w-full aspect-[3/4] object-cover object-top relative z-[1] contrast-[1.05] saturate-[0.88]"
+                />
+                <div className="absolute top-3.5 left-3.5 -right-3.5 -bottom-3.5 border border-[rgba(169,84,15,0.22)] pointer-events-none" />
               </div>
             </AnimatedSection>
 
-            {/* Introduction */}
             <AnimatedSection direction="right">
-              <p className="font-display text-2xl text-[#2C2825] leading-relaxed mb-8">
+              <p
+                className="text-2xl text-[#1a1510] leading-relaxed mb-8"
+                style={{ fontFamily: "var(--font-serif)" }}
+              >
                 I work with individuals and organizations at thresholds of
                 significant transition.
               </p>
 
-              <p className="text-[#8B6F5C] leading-relaxed mb-6">
+              <p className="text-[15px] leading-[1.85] font-light text-[#7a7068] mb-6">
                 My work concerns how environments are designed — and how people,
                 decisions, capital, and timing reorganize once the environment
                 is coherent.
               </p>
 
-              <p className="text-[#8B6F5C] leading-relaxed mb-6">
+              <p className="text-[15px] leading-[1.85] font-light text-[#7a7068] mb-6">
                 I am not interested in growth for its own sake, nor in business
                 as optimization. What I hold is a capacity to see structure
                 where others see circumstance — and to work with what is
                 actually present, rather than what is desired.
               </p>
 
-              <p className="text-[#8B6F5C] leading-relaxed">
+              <p className="text-[15px] leading-[1.85] font-light text-[#7a7068]">
                 What I offer today is not a method. It is a{" "}
-                <strong className="text-[#2C2825]">field</strong> — informed by
+                <strong className="text-[#1a1510]">field</strong> — informed by
                 lived decisions across cultures, industries, and ways of life.
               </p>
             </AnimatedSection>
@@ -124,13 +120,16 @@ export default function About() {
       </section>
 
       {/* Working Principles */}
-      <section className="section-padding bg-[#FAF8F5]">
-        <div className="container-wide px-6 lg:px-12">
+      <section className="py-24 px-6 bg-[#e8e4df]">
+        <div className="max-w-[1000px] mx-auto">
           <AnimatedSection className="text-center mb-16">
-            <h2 className="text-xs tracking-[0.3em] uppercase text-[#C9A962] mb-6">
+            <p className="text-[9px] tracking-[5px] uppercase text-[#A9540F] mb-6">
               How I Work
-            </h2>
-            <p className="font-display text-2xl text-[#2C2825]">
+            </p>
+            <p
+              className="text-2xl text-[#1a1510]"
+              style={{ fontFamily: "var(--font-serif)" }}
+            >
               Three principles inform everything I do.
             </p>
           </AnimatedSection>
@@ -138,16 +137,22 @@ export default function About() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
             {principles.map((principle, index) => (
               <AnimatedSection key={principle.title} delay={index * 0.1}>
-                <div className="p-8 border border-[#D4CFC7] h-full">
-                  <div className="w-12 h-12 rounded-full border border-[#C9A962] flex items-center justify-center mb-6">
-                    <span className="font-display text-xl text-[#C9A962]">
+                <div className="p-8 border border-[rgba(26,21,16,0.1)] h-full">
+                  <div className="w-12 h-12 rounded-full border border-[#A9540F] flex items-center justify-center mb-6">
+                    <span
+                      className="text-xl text-[#A9540F]"
+                      style={{ fontFamily: "var(--font-serif)" }}
+                    >
                       {index + 1}
                     </span>
                   </div>
-                  <h3 className="font-display text-xl text-[#2C2825] mb-4">
+                  <h3
+                    className="text-xl text-[#1a1510] mb-4"
+                    style={{ fontFamily: "var(--font-serif)" }}
+                  >
                     {principle.title}
                   </h3>
-                  <p className="text-[#8B6F5C] text-sm leading-relaxed">
+                  <p className="text-[#7a7068] text-sm leading-relaxed font-light">
                     {principle.description}
                   </p>
                 </div>
@@ -158,20 +163,22 @@ export default function About() {
       </section>
 
       {/* Background */}
-      <section className="section-padding bg-[#2C2825] text-[#FAF8F5]">
-        <div className="container-wide px-6 lg:px-12">
+      <section className="py-24 px-6 bg-[#1a1510] text-[#f2ede8]">
+        <div className="max-w-[1000px] mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-            {/* Content */}
             <AnimatedSection>
-              <h2 className="text-xs tracking-[0.3em] uppercase text-[#C9A962] mb-8">
+              <p className="text-[9px] tracking-[5px] uppercase text-[#A9540F] mb-8">
                 Background
-              </h2>
+              </p>
 
-              <p className="font-display text-2xl text-[#FAF8F5] leading-relaxed mb-8">
+              <p
+                className="text-2xl text-[#f2ede8] leading-relaxed mb-8"
+                style={{ fontFamily: "var(--font-serif)" }}
+              >
                 The path that led here is not linear.
               </p>
 
-              <p className="text-[#8B6F5C] leading-relaxed mb-8">
+              <p className="text-[15px] leading-[1.85] font-light text-[#7a7068] mb-8">
                 I do not share biography as qualification. I share it because
                 the work I do is inseparable from what I have lived. Every
                 structure I recognize in others, I have moved through myself.
@@ -180,21 +187,21 @@ export default function About() {
               <div className="space-y-4">
                 {background.map((item, index) => (
                   <div key={index} className="flex items-start gap-4">
-                    <div className="w-1.5 h-1.5 rounded-full bg-[#C9A962] mt-2.5 flex-shrink-0" />
-                    <p className="text-[#FAF8F5]">{item}</p>
+                    <div className="w-1 h-1 rounded-full bg-[#A9540F] mt-2.5 shrink-0" />
+                    <p className="text-[#f2ede8] text-[15px] font-light">{item}</p>
                   </div>
                 ))}
               </div>
             </AnimatedSection>
 
-            {/* Image Placeholder */}
             <AnimatedSection direction="right">
-              <div className="aspect-square bg-[#1A1715] relative overflow-hidden">
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <span className="font-display text-4xl text-[#FAF8F5]/10">
-                    Path
-                  </span>
-                </div>
+              <div className="aspect-square bg-[#2e2820] relative overflow-hidden flex items-center justify-center">
+                <span
+                  className="text-4xl text-[rgba(242,237,232,0.06)]"
+                  style={{ fontFamily: "var(--font-serif)" }}
+                >
+                  Path
+                </span>
               </div>
             </AnimatedSection>
           </div>
@@ -202,73 +209,96 @@ export default function About() {
       </section>
 
       {/* Philosophy */}
-      <section className="section-padding bg-[#FAF8F5]">
-        <div className="container-narrow text-center">
+      <section className="py-24 px-6 bg-[#e8e4df]">
+        <div className="max-w-[680px] mx-auto text-center">
           <AnimatedSection>
-            <h2 className="text-xs tracking-[0.3em] uppercase text-[#C9A962] mb-8">
+            <p className="text-[9px] tracking-[5px] uppercase text-[#A9540F] mb-8">
               Philosophy
-            </h2>
+            </p>
           </AnimatedSection>
 
           <AnimatedSection delay={0.1}>
-            <p className="font-display text-2xl md:text-3xl text-[#2C2825] leading-relaxed mb-12">
+            <p
+              className="text-[clamp(22px,3vw,32px)] text-[#1a1510] leading-relaxed mb-12"
+              style={{ fontFamily: "var(--font-serif)" }}
+            >
               I believe that wealth and spiritual depth are not opposites.
             </p>
           </AnimatedSection>
 
           <AnimatedSection delay={0.2}>
-            <p className="font-display text-lg text-[#8B6F5C] mb-4">
-              I believe that business, when understood structurally, is one of
-              the most powerful vehicles for transformation available to us.
-            </p>
-            <p className="font-display text-lg text-[#8B6F5C] mb-4">
-              I believe that clarity is not something we arrive at through
-              process, but something that reveals itself when the right
-              conditions are met.
-            </p>
-            <p className="font-display text-lg text-[#8B6F5C] mb-12">
-              I believe that most people are far closer to their own truth than
-              they recognize — and that what is needed is not more guidance, but
-              the right container for what already knows.
-            </p>
+            <div
+              className="text-lg text-[#7a7068] space-y-4 mb-12"
+              style={{ fontFamily: "var(--font-serif)" }}
+            >
+              <p>
+                I believe that business, when understood structurally, is one of
+                the most powerful vehicles for transformation available to us.
+              </p>
+              <p>
+                I believe that clarity is not something we arrive at through
+                process, but something that reveals itself when the right
+                conditions are met.
+              </p>
+              <p>
+                I believe that most people are far closer to their own truth than
+                they recognize — and that what is needed is not more guidance, but
+                the right container for what already knows.
+              </p>
+            </div>
           </AnimatedSection>
 
           <AnimatedSection delay={0.3}>
-            <p className="font-display text-xl text-[#2C2825]">
+            <p
+              className="text-xl text-[#1a1510]"
+              style={{ fontFamily: "var(--font-serif)" }}
+            >
               This is the field I hold.
             </p>
           </AnimatedSection>
         </div>
       </section>
 
-      {/* Not For Everyone */}
-      <section className="section-padding bg-[#1A1715] text-[#FAF8F5]">
-        <div className="container-narrow text-center">
+      {/* A Note */}
+      <section className="py-24 px-6 bg-[#1a1510] text-[#f2ede8]">
+        <div className="max-w-[680px] mx-auto text-center">
           <AnimatedSection>
-            <h2 className="text-xs tracking-[0.3em] uppercase text-[#C9A962] mb-8">
+            <p className="text-[9px] tracking-[5px] uppercase text-[#A9540F] mb-8">
               A Note
-            </h2>
+            </p>
           </AnimatedSection>
 
           <AnimatedSection delay={0.1}>
-            <p className="font-display text-2xl text-[#FAF8F5] leading-relaxed mb-8">
+            <p
+              className="text-2xl text-[#f2ede8] leading-relaxed mb-8"
+              style={{ fontFamily: "var(--font-serif)" }}
+            >
               I do not work with everyone.
             </p>
           </AnimatedSection>
 
           <AnimatedSection delay={0.2}>
-            <p className="font-display text-lg text-[#8B6F5C] mb-4">
+            <p
+              className="text-lg text-[#7a7068] mb-4"
+              style={{ fontFamily: "var(--font-serif)" }}
+            >
               Not because I am selective for exclusivity, but because the work I
               do requires a certain readiness.
             </p>
-            <p className="font-display text-lg text-[#8B6F5C] mb-8">
+            <p
+              className="text-lg text-[#7a7068] mb-8"
+              style={{ fontFamily: "var(--font-serif)" }}
+            >
               If what is written here resonates, it is likely because you
               already sense the field I describe.
             </p>
           </AnimatedSection>
 
           <AnimatedSection delay={0.3}>
-            <p className="font-display text-xl text-[#FAF8F5]">
+            <p
+              className="text-xl text-[#f2ede8]"
+              style={{ fontFamily: "var(--font-serif)" }}
+            >
               If so, what remains is entry — not persuasion.
             </p>
           </AnimatedSection>
@@ -276,33 +306,30 @@ export default function About() {
       </section>
 
       {/* CTA */}
-      <section className="section-padding bg-[#E8E4DE]">
-        <div className="container-narrow text-center">
+      <section className="py-24 px-6 bg-[#dedad4]">
+        <div className="max-w-[680px] mx-auto text-center">
           <AnimatedSection>
-            <h2 className="text-xs tracking-[0.3em] uppercase text-[#C9A962] mb-8">
+            <p className="text-[9px] tracking-[5px] uppercase text-[#A9540F] mb-8">
               Ways to Begin
-            </h2>
+            </p>
           </AnimatedSection>
 
           <AnimatedSection delay={0.1}>
-            <p className="font-display text-xl text-[#2C2825] mb-12">
+            <p
+              className="text-xl text-[#1a1510] mb-12"
+              style={{ fontFamily: "var(--font-serif)" }}
+            >
               Several structures exist depending on where you stand.
             </p>
           </AnimatedSection>
 
           <AnimatedSection delay={0.2}>
             <div className="flex flex-col sm:flex-row gap-4 justify-center flex-wrap">
-              <a href="/unify" className="btn btn-outline">
-                UniFY Course
+              <a href="/portal" className="btn-choose">
+                Universe Portal
               </a>
-              <a href="/private-advisory" className="btn btn-outline">
-                Private Advisory
-              </a>
-              <a href="/universe-experiences" className="btn btn-outline">
-                Experiences
-              </a>
-              <a href="/universe-club" className="btn btn-outline">
-                UniVerse Club
+              <a href="mailto:aelia@aeliakos.com" className="btn-ghost">
+                Begin a Conversation
               </a>
             </div>
           </AnimatedSection>
@@ -310,9 +337,9 @@ export default function About() {
       </section>
 
       {/* Company Info */}
-      <section className="py-16 bg-[#FAF8F5] border-t border-[#D4CFC7]">
-        <div className="container-narrow text-center px-6">
-          <p className="text-sm text-[#8B6F5C]">
+      <section className="py-12 bg-[#e8e4df] border-t border-[rgba(26,21,16,0.08)]">
+        <div className="max-w-[680px] mx-auto text-center px-6">
+          <p className="text-sm text-[#7a7068] font-light">
             Mindful Experience GmbH
             <br />
             Zugerstrasse 32, 6340 Baar, Switzerland

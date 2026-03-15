@@ -30,6 +30,10 @@ export const metadata: Metadata = {
     "private advisory",
   ],
   authors: [{ name: "Aelia Kos" }],
+  icons: {
+    icon: "/favicon.ico",
+    apple: "/apple-touch-icon.png",
+  },
   openGraph: {
     title: "Aelia Kos — Where Mystical High-Achievers Build Businesses with Soul",
     description: "Business as the Path for Self-Actualisation",

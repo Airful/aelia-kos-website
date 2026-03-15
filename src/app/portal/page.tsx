@@ -3,7 +3,12 @@
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { loadStripe } from "@stripe/stripe-js";
 import AnimatedSection from "@/components/AnimatedSection";
+
+const stripePromise = loadStripe(
+  "pk_live_51SgpncPgHFpLtxXi1NSzopEJQpgQbrChrfWRUiR2AttYUbRLCtGHCq2GtwZDZ3bqF0urFikRf6650Sch4tpsJDJN00kd9vh729"
+);
 
 const traits = [
   <>You check the astrology <em>and</em> the analytics</>,
@@ -91,9 +96,8 @@ export default function PortalPage() {
     setCheckoutLoading(true);
     setPaymentMessage("");
     try {
-      const stripe = (window as unknown as { Stripe: (key: string) => { redirectToCheckout: (opts: Record<string, unknown>) => Promise<{ error?: { message: string } }> } }).Stripe(
-        "pk_live_51SgpncPgHFpLtxXi1NSzopEJQpgQbrChrfWRUiR2AttYUbRLCtGHCq2GtwZDZ3bqF0urFikRf6650Sch4tpsJDJN00kd9vh729"
-      );
+      const stripe = await stripePromise;
+      if (!stripe) throw new Error("Stripe failed to load");
       const { error } = await stripe.redirectToCheckout({
         lineItems: [
           { price: "price_1T9AyzPgHFpLtxXiXwxsLT10", quantity: 1 },
@@ -106,7 +110,7 @@ export default function PortalPage() {
         cancelUrl: window.location.href,
       });
       if (error) {
-        setPaymentMessage(error.message);
+        setPaymentMessage(error.message || "Something went wrong.");
         setCheckoutLoading(false);
       }
     } catch {
@@ -117,9 +121,6 @@ export default function PortalPage() {
 
   return (
     <>
-      {/* Stripe.js */}
-      <script src="https://js.stripe.com/v3/" async />
-
       <main
         className="min-h-screen text-[#1a1510]"
         style={{

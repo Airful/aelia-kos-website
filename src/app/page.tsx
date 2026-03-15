@@ -149,6 +149,116 @@ export default function Home() {
         </AnimatedSection>
       </section>
 
+      {/* ── EXPERIENCES ── */}
+      <section
+        id="experiences"
+        className="py-24 px-10 max-w-[800px] mx-auto text-center"
+      >
+        <AnimatedSection>
+          <p className="text-[9px] tracking-[5px] uppercase text-[#A9540F] mb-6">
+            Experiences
+          </p>
+        </AnimatedSection>
+
+        <AnimatedSection delay={0.1}>
+          <h2
+            className="text-[clamp(32px,4vw,48px)] font-normal leading-[1.15] text-[#1a1510] mb-8"
+            style={{ fontFamily: "var(--font-serif)" }}
+          >
+            Physical environments designed to
+            <br />
+            <em className="italic text-[#A9540F]">activate collective intelligence</em>
+          </h2>
+        </AnimatedSection>
+
+        <AnimatedSection delay={0.2}>
+          <p className="text-[15px] leading-[1.85] font-light text-[#7a7068] max-w-[540px] mx-auto mb-10">
+            Through place, trust, and shared presence. These are not retreats.
+            They are field activations — immersive gatherings across extraordinary
+            locations where the right people, energy, and timing converge.
+          </p>
+        </AnimatedSection>
+
+        <AnimatedSection delay={0.3}>
+          <a
+            href="mailto:aelia@aeliakos.com"
+            className="btn-choose"
+          >
+            Inquire
+          </a>
+        </AnimatedSection>
+      </section>
+
+      {/* ── MENTORSHIP ── */}
+      <section
+        id="mentorship"
+        className="py-24 px-10 bg-[#1a1510] text-center"
+      >
+        <div className="max-w-[800px] mx-auto">
+          <AnimatedSection>
+            <p className="text-[9px] tracking-[5px] uppercase text-[#A9540F] mb-6">
+              Mentorship
+            </p>
+          </AnimatedSection>
+
+          <AnimatedSection delay={0.1}>
+            <h2
+              className="text-[clamp(32px,4vw,48px)] font-normal leading-[1.15] text-[#f2ede8] mb-8"
+              style={{ fontFamily: "var(--font-serif)" }}
+            >
+              Private advisory for leaders navigating
+              <br />
+              <em className="italic text-[rgba(242,237,232,0.45)]">structural repositioning</em>
+            </h2>
+          </AnimatedSection>
+
+          <AnimatedSection delay={0.2}>
+            <p className="text-[15px] leading-[1.85] font-light text-[#7a7068] max-w-[540px] mx-auto mb-4">
+              A time-bound advisory structure for those navigating moments where
+              identity, leadership, and structure reorganize simultaneously.
+              This work concerns clarity, coherence, and placement.
+            </p>
+          </AnimatedSection>
+
+          <AnimatedSection delay={0.25}>
+            <div className="flex justify-center gap-12 my-10">
+              <div className="text-center">
+                <span
+                  className="text-[28px] font-light text-[#f2ede8]"
+                  style={{ fontFamily: "var(--font-serif)" }}
+                >
+                  9–12
+                </span>
+                <p className="text-[8px] tracking-[4px] uppercase text-[#7a7068] mt-1">
+                  Months
+                </p>
+              </div>
+              <div className="w-px h-12 bg-[rgba(242,237,232,0.1)]" />
+              <div className="text-center">
+                <span
+                  className="text-[28px] font-light text-[#A9540F]"
+                  style={{ fontFamily: "var(--font-serif)" }}
+                >
+                  22,000 €
+                </span>
+                <p className="text-[8px] tracking-[4px] uppercase text-[#7a7068] mt-1">
+                  Investment
+                </p>
+              </div>
+            </div>
+          </AnimatedSection>
+
+          <AnimatedSection delay={0.3}>
+            <a
+              href="mailto:aelia@aeliakos.com"
+              className="btn-ghost !border-[rgba(242,237,232,0.15)] !text-[#f2ede8]"
+            >
+              Begin a conversation
+            </a>
+          </AnimatedSection>
+        </div>
+      </section>
+
       {/* ── ABOUT ── */}
       <section
         id="about"
