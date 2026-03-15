@@ -98,7 +98,8 @@ export default function PortalPage() {
     try {
       const stripe = await stripePromise;
       if (!stripe) throw new Error("Stripe failed to load");
-      const { error } = await stripe.redirectToCheckout({
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      const { error } = await (stripe as any).redirectToCheckout({
         lineItems: [
           { price: "price_1T9AyzPgHFpLtxXiXwxsLT10", quantity: 1 },
         ],
