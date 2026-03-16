@@ -3,12 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { loadStripe } from "@stripe/stripe-js";
 import AnimatedSection from "@/components/AnimatedSection";
-
-const stripePromise = loadStripe(
-  "pk_live_51SgpncPgHFpLtxXi1NSzopEJQpgQbrChrfWRUiR2AttYUbRLCtGHCq2GtwZDZ3bqF0urFikRf6650Sch4tpsJDJN00kd9vh729"
-);
 
 const traits = [
   <>You check the astrology <em>and</em> the analytics</>,
@@ -96,26 +91,20 @@ export default function PortalPage() {
     setCheckoutLoading(true);
     setPaymentMessage("");
     try {
-      const stripe = await stripePromise;
-      if (!stripe) throw new Error("Stripe failed to load");
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      const { error } = await (stripe as any).redirectToCheckout({
-        lineItems: [
-          { price: "price_1T9AyzPgHFpLtxXiXwxsLT10", quantity: 1 },
-        ],
-        mode: "subscription",
-        successUrl:
-          window.location.origin +
-          window.location.pathname +
-          "?success=true",
-        cancelUrl: window.location.href,
+      const res = await fetch("/api/checkout", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          priceId: process.env.NEXT_PUBLIC_STRIPE_PRICE_ID,
+        }),
       });
-      if (error) {
-        setPaymentMessage(error.message || "Something went wrong.");
-        setCheckoutLoading(false);
-      }
-    } catch {
-      setPaymentMessage("Something went wrong. Please try again.");
+      const data = await res.json();
+      if (!res.ok) throw new Error(data.error || "Checkout failed");
+      window.location.href = data.url;
+    } catch (err) {
+      setPaymentMessage(
+        err instanceof Error ? err.message : "Something went wrong. Please try again."
+      );
       setCheckoutLoading(false);
     }
   }
