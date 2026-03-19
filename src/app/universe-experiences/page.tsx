@@ -327,9 +327,19 @@ export default function UniVerseExperiences() {
           </AnimatedSection>
 
           <AnimatedSection delay={0.3}>
-            <a href="/universe-club" className="btn btn-gold">
-              Join UniVerse Club for Early Access
-            </a>
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+              <a
+                href="https://intaaya.com/retreats/universe-experience/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn btn-primary"
+              >
+                Inquire for Indonesia
+              </a>
+              <a href="/universe-club" className="btn btn-gold">
+                Join UniVerse Club for Early Access
+              </a>
+            </div>
           </AnimatedSection>
         </div>
       </section>

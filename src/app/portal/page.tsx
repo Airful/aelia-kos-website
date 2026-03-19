@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+// Note: /api/checkout route kept for potential future use
 import Image from "next/image";
 import Link from "next/link";
 import AnimatedSection from "@/components/AnimatedSection";
@@ -74,8 +75,6 @@ function Stars() {
 }
 
 export default function PortalPage() {
-  const [checkoutLoading, setCheckoutLoading] = useState(false);
-  const [paymentMessage, setPaymentMessage] = useState("");
   const [showSuccess, setShowSuccess] = useState(false);
 
   useEffect(() => {
@@ -86,28 +85,6 @@ export default function PortalPage() {
       }
     }
   }, []);
-
-  async function handleCheckout() {
-    setCheckoutLoading(true);
-    setPaymentMessage("");
-    try {
-      const res = await fetch("/api/checkout", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          priceId: process.env.NEXT_PUBLIC_STRIPE_PRICE_ID,
-        }),
-      });
-      const data = await res.json();
-      if (!res.ok) throw new Error(data.error || "Checkout failed");
-      window.location.href = data.url;
-    } catch (err) {
-      setPaymentMessage(
-        err instanceof Error ? err.message : "Something went wrong. Please try again."
-      );
-      setCheckoutLoading(false);
-    }
-  }
 
   return (
     <>
@@ -136,7 +113,9 @@ export default function PortalPage() {
             />
           </Link>
           <a
-            href="#join"
+            href="https://buy.stripe.com/bJe9AV2qAf6qfaC6R493y05"
+            target="_blank"
+            rel="noopener noreferrer"
             className="text-[11px] tracking-[0.2em] uppercase text-[#1a1510] opacity-45 no-underline hover:opacity-100 hover:text-[#A9540F] transition-all"
           >
             Enter the Portal
@@ -194,7 +173,7 @@ export default function PortalPage() {
 
           {/* CTA */}
           <div className="relative z-[2] mt-[26px] animate-[fadeUp_1s_ease_both_0.9s]">
-            <a href="#join" className="btn-ghost">
+            <a href="https://buy.stripe.com/bJe9AV2qAf6qfaC6R493y05" target="_blank" rel="noopener noreferrer" className="btn-ghost">
               Enter the Portal
             </a>
           </div>
@@ -387,7 +366,7 @@ export default function PortalPage() {
                 </p>
               </div>
               <div className="mt-8">
-                <a href="#join" className="btn-ghost">
+                <a href="https://buy.stripe.com/bJe9AV2qAf6qfaC6R493y05" target="_blank" rel="noopener noreferrer" className="btn-ghost">
                   Enter the Portal →
                 </a>
               </div>
@@ -455,18 +434,14 @@ export default function PortalPage() {
           </AnimatedSection>
 
           <AnimatedSection delay={0.4}>
-            <button
+            <a
+              href="https://buy.stripe.com/bJe9AV2qAf6qfaC6R493y05"
+              target="_blank"
+              rel="noopener noreferrer"
               className="btn-enter relative z-[1]"
-              onClick={handleCheckout}
-              disabled={checkoutLoading}
             >
-              {checkoutLoading ? "Opening..." : "Enter Universe Portal"}
-            </button>
-            {paymentMessage && (
-              <p className="text-xs text-[#7a7068] mt-3.5 min-h-[18px] relative z-[1]">
-                {paymentMessage}
-              </p>
-            )}
+              Enter Universe Portal
+            </a>
           </AnimatedSection>
         </section>
 
