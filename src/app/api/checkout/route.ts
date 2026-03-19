@@ -8,7 +8,8 @@ function getStripe() {
 export async function POST(req: NextRequest) {
   try {
     const stripe = getStripe();
-    const { priceId } = await req.json();
+    const { priceId: rawPriceId } = await req.json();
+    const priceId = typeof rawPriceId === "string" ? rawPriceId.trim() : rawPriceId;
 
     if (!priceId || typeof priceId !== "string") {
       return NextResponse.json(
