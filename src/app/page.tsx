@@ -181,7 +181,9 @@ export default function Home() {
 
         <AnimatedSection delay={0.3}>
           <a
-            href="mailto:aelia@aeliakos.com"
+            href="https://intaaya.com/retreats/universe-experience/"
+            target="_blank"
+            rel="noopener noreferrer"
             className="btn-choose"
           >
             Inquire
