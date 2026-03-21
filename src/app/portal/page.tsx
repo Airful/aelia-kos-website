@@ -139,6 +139,18 @@ export default function PortalPage() {
             <div className="absolute inset-0 rounded-t-[200px] border border-[rgba(169,84,15,0.22)] opacity-0 animate-[archIn_2.8s_ease_0.4s_forwards]" />
             {/* Inner ring */}
             <div className="absolute inset-[18px] rounded-t-[182px] border border-[rgba(26,21,16,0.1)] opacity-0 animate-[archIn_2.8s_ease_0.7s_forwards]" />
+            {/* Sky image inside arch */}
+            <div className="absolute inset-0 rounded-t-[200px] overflow-hidden z-0">
+              <Image
+                src="/sky.jpg"
+                alt=""
+                width={400}
+                height={520}
+                className="w-full h-full object-cover"
+                style={{ objectPosition: "center 30%" }}
+                priority
+              />
+            </div>
             {/* Fill glow */}
             <div className="absolute inset-0 rounded-t-[200px] bg-gradient-to-b from-[rgba(169,84,15,0.05)] to-transparent opacity-0 animate-[archIn_3s_ease_0.5s_forwards]" />
           </div>
@@ -150,7 +162,7 @@ export default function PortalPage() {
 
           {/* Title */}
           <h1
-            className="relative z-[2] text-[clamp(52px,8.5vw,90px)] font-light leading-[0.9] tracking-[-0.025em] text-[#1a1510] mt-5 animate-[fadeUp_1s_ease_both_0.45s]"
+            className="relative z-[2] text-[clamp(52px,8.5vw,90px)] font-light leading-[0.9] tracking-[-0.025em] text-[#E0E0E0] mt-5 animate-[fadeUp_1s_ease_both_0.45s]"
             style={{ fontFamily: "var(--font-serif)" }}
           >
             Universe
@@ -160,11 +172,11 @@ export default function PortalPage() {
 
           {/* Details */}
           <div className="relative z-[2] flex flex-col items-center mt-[22px] animate-[fadeUp_1s_ease_both_0.7s]">
-            <span className="text-[11px] tracking-[0.18em] font-light text-[#7a7068]">
+            <span className="text-[11px] tracking-[0.18em] font-light text-[#C0C0C0]">
               A living membership
             </span>
             <span
-              className="text-[17px] font-light tracking-[0.08em] text-[#1a1510] mt-[5px]"
+              className="text-[17px] font-light tracking-[0.08em] text-[#E0E0E0] mt-[5px]"
               style={{ fontFamily: "var(--font-serif)" }}
             >
               CHF 111 / month
@@ -173,14 +185,14 @@ export default function PortalPage() {
 
           {/* CTA */}
           <div className="relative z-[2] mt-[26px] animate-[fadeUp_1s_ease_both_0.9s]">
-            <a href="https://buy.stripe.com/bJe9AV2qAf6qfaC6R493y05" target="_blank" rel="noopener noreferrer" className="btn-ghost">
+            <a href="#join" className="btn-ghost border-[rgba(224,224,224,0.55)] !text-[#E0E0E0] !opacity-100 hover:!border-[#A9540F]">
               Enter the Portal
             </a>
           </div>
 
           {/* Scroll cue */}
           <div className="absolute bottom-7 left-0 right-0 flex flex-col items-center gap-[7px] z-[2] animate-[fadeUp_1s_ease_both_1.2s]">
-            <span className="text-[9px] tracking-[0.26em] uppercase text-[#1a1510] opacity-30">
+            <span className="text-[9px] tracking-[0.26em] uppercase text-[#E0E0E0] opacity-50">
               Discover
             </span>
             <div className="w-px h-8 bg-gradient-to-b from-[#A9540F] to-transparent animate-[linePulse_2.4s_ease-in-out_infinite]" />
@@ -366,8 +378,11 @@ export default function PortalPage() {
                 </p>
               </div>
               <div className="mt-8">
-                <a href="https://buy.stripe.com/bJe9AV2qAf6qfaC6R493y05" target="_blank" rel="noopener noreferrer" className="btn-ghost">
-                  Enter the Portal →
+                <a href="#join" className="btn-ghost relative overflow-hidden !opacity-100 !text-[#E0E0E0] !border-[rgba(224,224,224,0.45)] hover:!border-[#A9540F]">
+                  <span className="absolute inset-0 z-0 pointer-events-none">
+                    <Image src="/sky.jpg" alt="" width={200} height={50} className="w-full h-full object-cover object-center" />
+                  </span>
+                  <span className="relative z-[1]">Enter the Portal →</span>
                 </a>
               </div>
             </AnimatedSection>
@@ -438,9 +453,12 @@ export default function PortalPage() {
               href="https://buy.stripe.com/bJe9AV2qAf6qfaC6R493y05"
               target="_blank"
               rel="noopener noreferrer"
-              className="btn-enter relative z-[1]"
+              className="btn-enter relative z-[1] overflow-hidden !text-[#E0E0E0] hover:!text-white"
             >
-              Enter Universe Portal
+              <span className="absolute inset-0 z-0 pointer-events-none">
+                <Image src="/sky.jpg" alt="" width={200} height={50} className="w-full h-full object-cover object-center" />
+              </span>
+              <span className="relative z-[1]">Enter Universe Portal</span>
             </a>
           </AnimatedSection>
         </section>
