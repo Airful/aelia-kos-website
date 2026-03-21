@@ -112,14 +112,12 @@ export default function PortalPage() {
               className="h-[38px] w-auto opacity-85 hover:opacity-100 transition-opacity"
             />
           </Link>
-          <a
-            href="https://buy.stripe.com/bJe9AV2qAf6qfaC6R493y05"
-            target="_blank"
-            rel="noopener noreferrer"
+          <Link
+            href="/portal"
             className="text-[11px] tracking-[0.2em] uppercase text-[#1a1510] opacity-45 no-underline hover:opacity-100 hover:text-[#A9540F] transition-all"
           >
             Enter the Portal
-          </a>
+          </Link>
         </nav>
 
         {/* ── HERO ── */}
@@ -185,7 +183,12 @@ export default function PortalPage() {
 
           {/* CTA */}
           <div className="relative z-[2] mt-[26px] animate-[fadeUp_1s_ease_both_0.9s]">
-            <a href="#join" className="btn-ghost border-[rgba(224,224,224,0.55)] !text-[#E0E0E0] !opacity-100 hover:!border-[#A9540F]">
+            <a
+              href="https://buy.stripe.com/bJe9AV2qAf6qfaC6R493y05"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-ghost border-[rgba(224,224,224,0.55)] !text-[#E0E0E0] !opacity-100 hover:!border-[#A9540F]"
+            >
               Enter the Portal
             </a>
           </div>
@@ -378,7 +381,12 @@ export default function PortalPage() {
                 </p>
               </div>
               <div className="mt-8">
-                <a href="#join" className="btn-ghost relative overflow-hidden !opacity-100 !text-[#E0E0E0] !border-[rgba(224,224,224,0.45)] hover:!border-[#A9540F]">
+                <a
+                  href="https://buy.stripe.com/bJe9AV2qAf6qfaC6R493y05"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn-ghost relative overflow-hidden !opacity-100 !text-[#E0E0E0] !border-[rgba(224,224,224,0.45)] hover:!border-[#A9540F]"
+                >
                   <span className="absolute inset-0 z-0 pointer-events-none">
                     <Image src="/sky.jpg" alt="" width={200} height={50} className="w-full h-full object-cover object-center" />
                   </span>
