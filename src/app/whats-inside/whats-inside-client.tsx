@@ -272,7 +272,7 @@ export function WhatsInsideClient() {
       <div className="section-divider" />
 
       {/* TESTIMONIAL */}
-      <section className="relative z-[1] py-[60px] px-6 md:px-12 max-w-[800px] mx-auto">
+      <section className="relative z-[1] pt-[60px] pb-[20px] px-6 md:px-12 max-w-[800px] mx-auto">
         <AnimatedSection>
           <div className="p-8 md:p-10 md:px-11 border-l-2 border-[#A9540F] bg-[rgba(169,84,15,0.06)]">
             <p
@@ -291,7 +291,7 @@ export function WhatsInsideClient() {
       </section>
 
       {/* CTA */}
-      <section className="relative z-[1] py-[80px] px-6 md:px-12 text-center">
+      <section className="relative z-[1] pt-[40px] pb-[80px] px-6 md:px-12 text-center">
         <AnimatedSection>
           <a
             href="https://buy.stripe.com/bJe9AV2qAf6qfaC6R493y05"
