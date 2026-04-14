@@ -84,41 +84,6 @@ function Stars() {
   );
 }
 
-function CommitmentStars() {
-  const containerRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const el = containerRef.current;
-    if (!el) return;
-    for (let i = 0; i < 80; i++) {
-      const s = document.createElement("div");
-      const sz = Math.random() < 0.72 ? 1 : 1.5;
-      const bright =
-        Math.random() < 0.3
-          ? 0.5 + Math.random() * 0.3
-          : 0.1 + Math.random() * 0.25;
-      s.style.cssText = `
-        position:absolute;border-radius:50%;background:#A9540F;
-        left:${Math.random() * 100}%;top:${Math.random() * 100}%;
-        width:${sz}px;height:${sz}px;
-        animation:twinkle ${5 + Math.random() * 7}s ease-in-out infinite ${-Math.random() * 10}s;
-        --bright:${bright};opacity:0;
-      `;
-      el.appendChild(s);
-    }
-    return () => {
-      el.innerHTML = "";
-    };
-  }, []);
-
-  return (
-    <div
-      ref={containerRef}
-      className="absolute inset-0 pointer-events-none overflow-hidden"
-    />
-  );
-}
-
 export function WhatsInsideClient() {
   return (
     <main
@@ -169,7 +134,7 @@ export function WhatsInsideClient() {
         </AnimatedSection>
 
         <AnimatedSection delay={0.2}>
-          <p className="text-[15px] leading-[1.9] font-light text-[#7a7068] max-w-[500px] mx-auto">
+          <p className="text-[15px] leading-[1.9] font-light text-[#1a1510] opacity-65 max-w-[500px] mx-auto">
             Before you proceed to checkout, we want you to feel completely clear.
             Here is what your membership includes, what it costs, and what it asks
             of your time.
@@ -220,20 +185,32 @@ export function WhatsInsideClient() {
 
       <div className="section-divider" />
 
-      {/* TIME COMMITMENT — dark strip with stars */}
+      {/* TIME COMMITMENT — sky image strip */}
       <section className="relative z-[1] overflow-hidden">
-        <div
-          className="relative py-[72px] px-6 md:px-12 text-center"
-          style={{
-            background:
-              "linear-gradient(180deg, rgba(26,21,16,0.92) 0%, rgba(26,21,16,0.96) 100%)",
-          }}
-        >
-          <CommitmentStars />
+        <div className="relative py-[80px] px-6 md:px-12 text-center">
+          {/* Sky background */}
+          <div className="absolute inset-0 z-0">
+            <Image
+              src="/sky.jpg"
+              alt=""
+              fill
+              className="object-cover object-center"
+            />
+            {/* Warm overlay */}
+            <div
+              className="absolute inset-0"
+              style={{
+                background: `
+                  radial-gradient(ellipse 60% 50% at 50% 30%, rgba(169,84,15,0.18) 0%, transparent 65%),
+                  radial-gradient(ellipse 80% 60% at 20% 80%, rgba(169,84,15,0.10) 0%, transparent 55%)
+                `,
+              }}
+            />
+          </div>
 
           <AnimatedSection>
             <h2
-              className="relative z-[1] text-[clamp(28px,4vw,42px)] font-light text-[#e8e4df] mb-12"
+              className="relative z-[1] text-[clamp(26px,3.5vw,36px)] font-light text-[#e8e4df] mb-14 italic"
               style={{ fontFamily: "var(--font-serif)" }}
             >
               Your honest time commitment
@@ -241,16 +218,16 @@ export function WhatsInsideClient() {
           </AnimatedSection>
 
           <AnimatedSection delay={0.15}>
-            <div className="relative z-[1] flex flex-col md:flex-row items-center justify-center gap-12 md:gap-20">
+            <div className="relative z-[1] flex flex-col md:flex-row items-center justify-center gap-14 md:gap-24">
               {commitments.map((c) => (
-                <div key={c.label} className="flex flex-col items-center gap-2">
+                <div key={c.label} className="flex flex-col items-center gap-3">
                   <span
-                    className="text-[clamp(42px,7vw,64px)] font-light text-[#A9540F] leading-none"
+                    className="text-[clamp(46px,8vw,72px)] font-light text-[#A9540F] leading-none"
                     style={{ fontFamily: "var(--font-serif)" }}
                   >
                     {c.value}
                   </span>
-                  <span className="text-[10px] tracking-[0.2em] uppercase text-[rgba(232,228,223,0.5)]">
+                  <span className="text-[10px] tracking-[0.22em] uppercase text-[rgba(232,228,223,0.6)]">
                     {c.label}
                   </span>
                 </div>
@@ -272,7 +249,7 @@ export function WhatsInsideClient() {
         </AnimatedSection>
 
         <AnimatedSection delay={0.1}>
-          <p className="text-[15px] leading-[1.9] font-light text-[#7a7068] mb-10">
+          <p className="text-[15px] leading-[1.9] font-light text-[#1a1510] opacity-70 mb-10">
             We&apos;d rather you experience it than wonder about it. So your first
             30 days cost nothing.
           </p>
@@ -283,7 +260,7 @@ export function WhatsInsideClient() {
             {terms.map((term, i) => (
               <div key={i} className="flex items-start gap-4">
                 <span className="text-[#A9540F] text-lg mt-0.5 shrink-0">✓</span>
-                <span className="text-[14px] leading-[1.75] text-[#7a7068] font-light">
+                <span className="text-[14px] leading-[1.75] text-[#1a1510] font-light">
                   {term}
                 </span>
               </div>
@@ -320,11 +297,14 @@ export function WhatsInsideClient() {
             href="https://buy.stripe.com/bJe9AV2qAf6qfaC6R493y05"
             target="_blank"
             rel="noopener noreferrer"
-            className="btn-enter"
+            className="relative inline-block overflow-hidden text-[11px] tracking-[0.24em] uppercase text-[#E0E0E0] no-underline px-12 py-5 transition-all hover:brightness-110"
           >
-            Claim my free month
+            <span className="absolute inset-0 z-0">
+              <Image src="/sky.jpg" alt="" fill className="object-cover object-center" />
+            </span>
+            <span className="relative z-[1]">Claim my free month</span>
           </a>
-          <p className="text-[12px] text-[#7a7068] mt-4 tracking-wide">
+          <p className="text-[12px] text-[#7a7068] mt-5 tracking-wide">
             You will not be charged today &nbsp;&middot;&nbsp; Cancel before day 31
             to pay nothing
           </p>
