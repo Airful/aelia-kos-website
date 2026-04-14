@@ -453,17 +453,15 @@ export default function PortalPage() {
           </AnimatedSection>
 
           <AnimatedSection delay={0.4}>
-            <a
-              href="https://buy.stripe.com/bJe9AV2qAf6qfaC6R493y05"
-              target="_blank"
-              rel="noopener noreferrer"
+            <Link
+              href="/whats-inside"
               className="btn-enter relative z-[1] overflow-hidden !text-[#E0E0E0] hover:!text-white"
             >
               <span className="absolute inset-0 z-0 pointer-events-none">
                 <Image src="/sky.jpg" alt="" width={200} height={50} className="w-full h-full object-cover object-center" />
               </span>
               <span className="relative z-[1]">Enter Universe Portal</span>
-            </a>
+            </Link>
           </AnimatedSection>
         </section>
 
