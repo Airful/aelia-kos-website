@@ -183,14 +183,12 @@ export default function PortalPage() {
 
           {/* CTA */}
           <div className="relative z-[2] mt-[26px] animate-[fadeUp_1s_ease_both_0.9s]">
-            <a
-              href="https://buy.stripe.com/bJe9AV2qAf6qfaC6R493y05"
-              target="_blank"
-              rel="noopener noreferrer"
+            <Link
+              href="/whats-inside"
               className="btn-ghost border-[rgba(224,224,224,0.55)] !text-[#E0E0E0] !opacity-100 hover:!border-[#A9540F]"
             >
               Enter the Portal
-            </a>
+            </Link>
           </div>
 
           {/* Scroll cue */}
@@ -381,17 +379,15 @@ export default function PortalPage() {
                 </p>
               </div>
               <div className="mt-8">
-                <a
-                  href="https://buy.stripe.com/bJe9AV2qAf6qfaC6R493y05"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <Link
+                  href="/whats-inside"
                   className="btn-ghost relative overflow-hidden !opacity-100 !text-[#E0E0E0] !border-[rgba(224,224,224,0.45)] hover:!border-[#A9540F]"
                 >
                   <span className="absolute inset-0 z-0 pointer-events-none">
                     <Image src="/sky.jpg" alt="" width={200} height={50} className="w-full h-full object-cover object-center" />
                   </span>
                   <span className="relative z-[1]">Enter the Portal →</span>
-                </a>
+                </Link>
               </div>
             </AnimatedSection>
           </div>
