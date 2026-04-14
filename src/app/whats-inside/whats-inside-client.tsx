@@ -84,6 +84,41 @@ function Stars() {
   );
 }
 
+function CommitmentStars() {
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const el = containerRef.current;
+    if (!el) return;
+    for (let i = 0; i < 80; i++) {
+      const s = document.createElement("div");
+      const sz = Math.random() < 0.72 ? 1 : 1.5;
+      const bright =
+        Math.random() < 0.3
+          ? 0.5 + Math.random() * 0.3
+          : 0.1 + Math.random() * 0.25;
+      s.style.cssText = `
+        position:absolute;border-radius:50%;background:#A9540F;
+        left:${Math.random() * 100}%;top:${Math.random() * 100}%;
+        width:${sz}px;height:${sz}px;
+        animation:twinkle ${5 + Math.random() * 7}s ease-in-out infinite ${-Math.random() * 10}s;
+        --bright:${bright};opacity:0;
+      `;
+      el.appendChild(s);
+    }
+    return () => {
+      el.innerHTML = "";
+    };
+  }, []);
+
+  return (
+    <div
+      ref={containerRef}
+      className="absolute inset-0 pointer-events-none overflow-hidden"
+    />
+  );
+}
+
 export function WhatsInsideClient() {
   return (
     <main
@@ -111,12 +146,13 @@ export function WhatsInsideClient() {
           />
         </Link>
         <span className="text-[10px] tracking-[0.22em] uppercase text-[#7a7068]">
-          Step 2 of 2 &middot; <em className="not-italic text-[#A9540F]">Review</em>
+          Step 1 of 2 &middot;{" "}
+          <em className="not-italic text-[#A9540F]">Review your membership</em>
         </span>
       </nav>
 
       {/* HERO */}
-      <section className="relative z-[1] pt-[160px] pb-[80px] px-8 text-center max-w-[720px] mx-auto animate-[fadeUp_0.9s_ease_both_0.2s]">
+      <section className="relative z-[1] pt-[160px] pb-[80px] px-8 text-center max-w-[720px] mx-auto">
         <AnimatedSection>
           <span className="eyebrow">Universe Portal — Membership</span>
         </AnimatedSection>
@@ -153,7 +189,7 @@ export function WhatsInsideClient() {
 
         <AnimatedSection delay={0.2}>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-[rgba(26,21,16,0.1)] border border-[rgba(26,21,16,0.1)]">
-            {offerings.map((o, i) => (
+            {offerings.map((o) => (
               <div
                 key={o.num}
                 className="bg-[#e8e4df] p-8 md:p-10 hover:bg-[rgba(169,84,15,0.06)] transition-colors"
@@ -184,41 +220,44 @@ export function WhatsInsideClient() {
 
       <div className="section-divider" />
 
-      {/* TIME COMMITMENT */}
-      <section
-        className="relative z-[1] py-[72px] px-6 md:px-12 text-center"
-        style={{
-          background: `
-            linear-gradient(180deg, rgba(26,21,16,0.92) 0%, rgba(26,21,16,0.96) 100%)
-          `,
-        }}
-      >
-        <AnimatedSection>
-          <h2
-            className="text-[clamp(28px,4vw,42px)] font-light text-[#e8e4df] mb-12"
-            style={{ fontFamily: "var(--font-serif)" }}
-          >
-            Your honest time commitment
-          </h2>
-        </AnimatedSection>
+      {/* TIME COMMITMENT — dark strip with stars */}
+      <section className="relative z-[1] overflow-hidden">
+        <div
+          className="relative py-[72px] px-6 md:px-12 text-center"
+          style={{
+            background:
+              "linear-gradient(180deg, rgba(26,21,16,0.92) 0%, rgba(26,21,16,0.96) 100%)",
+          }}
+        >
+          <CommitmentStars />
 
-        <AnimatedSection delay={0.15}>
-          <div className="flex flex-col md:flex-row items-center justify-center gap-12 md:gap-20">
-            {commitments.map((c) => (
-              <div key={c.label} className="flex flex-col items-center gap-2">
-                <span
-                  className="text-[clamp(42px,7vw,64px)] font-light text-[#A9540F] leading-none"
-                  style={{ fontFamily: "var(--font-serif)" }}
-                >
-                  {c.value}
-                </span>
-                <span className="text-[10px] tracking-[0.2em] uppercase text-[rgba(232,228,223,0.5)]">
-                  {c.label}
-                </span>
-              </div>
-            ))}
-          </div>
-        </AnimatedSection>
+          <AnimatedSection>
+            <h2
+              className="relative z-[1] text-[clamp(28px,4vw,42px)] font-light text-[#e8e4df] mb-12"
+              style={{ fontFamily: "var(--font-serif)" }}
+            >
+              Your honest time commitment
+            </h2>
+          </AnimatedSection>
+
+          <AnimatedSection delay={0.15}>
+            <div className="relative z-[1] flex flex-col md:flex-row items-center justify-center gap-12 md:gap-20">
+              {commitments.map((c) => (
+                <div key={c.label} className="flex flex-col items-center gap-2">
+                  <span
+                    className="text-[clamp(42px,7vw,64px)] font-light text-[#A9540F] leading-none"
+                    style={{ fontFamily: "var(--font-serif)" }}
+                  >
+                    {c.value}
+                  </span>
+                  <span className="text-[10px] tracking-[0.2em] uppercase text-[rgba(232,228,223,0.5)]">
+                    {c.label}
+                  </span>
+                </div>
+              ))}
+            </div>
+          </AnimatedSection>
+        </div>
       </section>
 
       {/* FREE TRIAL */}
@@ -258,7 +297,7 @@ export function WhatsInsideClient() {
       {/* TESTIMONIAL */}
       <section className="relative z-[1] py-[60px] px-6 md:px-12 max-w-[800px] mx-auto">
         <AnimatedSection>
-          <div className="p-8 md:p-10 md:px-11 border-l-2 border-[#A9540F] bg-[rgba(169,84,15,0.06)] text-left">
+          <div className="p-8 md:p-10 md:px-11 border-l-2 border-[#A9540F] bg-[rgba(169,84,15,0.06)]">
             <p
               className="text-[clamp(17px,2.4vw,23px)] font-light italic leading-[1.55] text-[#1a1510]"
               style={{ fontFamily: "var(--font-serif)" }}
@@ -275,7 +314,7 @@ export function WhatsInsideClient() {
       </section>
 
       {/* CTA */}
-      <section className="relative z-[1] py-[60px] px-6 md:px-12 text-center">
+      <section className="relative z-[1] py-[80px] px-6 md:px-12 text-center">
         <AnimatedSection>
           <a
             href="https://buy.stripe.com/bJe9AV2qAf6qfaC6R493y05"
