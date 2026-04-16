@@ -293,20 +293,18 @@ export function WhatsInsideClient() {
       {/* CTA */}
       <section className="relative z-[1] pt-[40px] pb-[80px] px-6 md:px-12 text-center">
         <AnimatedSection>
-          <a
-            href="https://buy.stripe.com/bJe9AV2qAf6qfaC6R493y05"
-            target="_blank"
-            rel="noopener noreferrer"
+          <Link
+            href="/register"
             className="relative inline-block overflow-hidden text-[11px] tracking-[0.24em] uppercase text-[#E0E0E0] no-underline px-12 py-5 transition-all hover:brightness-110"
           >
             <span className="absolute inset-0 z-0">
               <Image src="/sky.jpg" alt="" fill className="object-cover object-center" />
             </span>
-            <span className="relative z-[1]">Claim my free month</span>
-          </a>
+            <span className="relative z-[1]">Register Interest</span>
+          </Link>
           <p className="text-[12px] text-[#7a7068] mt-5 tracking-wide">
-            You will not be charged today &nbsp;&middot;&nbsp; Cancel before day 31
-            to pay nothing
+            No payment required &nbsp;&middot;&nbsp; We&apos;ll be in touch when
+            the Portal is ready
           </p>
         </AnimatedSection>
       </section>
