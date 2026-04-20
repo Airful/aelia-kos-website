@@ -35,9 +35,9 @@ export default function Navigation() {
           <Image
             src="/logo.png"
             alt="Aelia Kos"
-            width={48}
+            width={96}
             height={48}
-            className="h-12 w-auto opacity-[0.88] hover:opacity-100 transition-opacity"
+            className="h-10 w-auto opacity-[0.88] hover:opacity-100 transition-opacity"
           />
         </Link>
 

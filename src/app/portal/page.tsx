@@ -107,7 +107,7 @@ export default function PortalPage() {
             <Image
               src="/logo.png"
               alt="Aelia Kos"
-              width={38}
+              width={76}
               height={38}
               className="h-[38px] w-auto opacity-85 hover:opacity-100 transition-opacity"
             />
@@ -471,7 +471,7 @@ export default function PortalPage() {
             <Image
               src="/logo.png"
               alt="Aelia Kos"
-              width={26}
+              width={52}
               height={26}
               className="h-[26px] w-auto opacity-40"
             />
