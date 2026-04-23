@@ -4,6 +4,7 @@ import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import AnimatedSection from "@/components/AnimatedSection";
+import { trackRegisterSubmit, trackRegisterSuccess } from "@/lib/analytics";
 
 function Stars() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -52,6 +53,7 @@ export function RegisterClient() {
     e.preventDefault();
     setLoading(true);
     setError("");
+    trackRegisterSubmit();
 
     const res = await fetch("/api/register-interest", {
       method: "POST",
@@ -63,6 +65,7 @@ export function RegisterClient() {
     setLoading(false);
 
     if (data.success) {
+      trackRegisterSuccess();
       setSubmitted(true);
     } else {
       setError(data.error ?? "Something went wrong. Please try again.");

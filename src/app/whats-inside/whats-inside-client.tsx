@@ -4,6 +4,7 @@ import { useEffect, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import AnimatedSection from "@/components/AnimatedSection";
+import { trackRegisterInterestCta } from "@/lib/analytics";
 
 const offerings = [
   {
@@ -295,6 +296,7 @@ export function WhatsInsideClient() {
         <AnimatedSection>
           <Link
             href="/register"
+            onClick={trackRegisterInterestCta}
             className="relative inline-block overflow-hidden text-[11px] tracking-[0.24em] uppercase text-[#E0E0E0] no-underline px-12 py-5 transition-all hover:brightness-110"
           >
             <span className="absolute inset-0 z-0">

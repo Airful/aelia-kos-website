@@ -4,8 +4,13 @@ import { useEffect } from "react";
 import Cal, { getCalApi } from "@calcom/embed-react";
 import Image from "next/image";
 import Link from "next/link";
+import { trackBookSessionView } from "@/lib/analytics";
 
 export default function BookingClient() {
+  useEffect(() => {
+    trackBookSessionView();
+  }, []);
+
   useEffect(() => {
     (async function () {
       const cal = await getCalApi();

@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import AnimatedSection from "@/components/AnimatedSection";
+import { trackStripeClick } from "@/lib/analytics";
 
 const stages = [
   {
@@ -254,6 +255,7 @@ export default function UniFYCourse() {
               href="https://buy.stripe.com/example-unify"
               target="_blank"
               rel="noopener noreferrer"
+              onClick={() => trackStripeClick("unify")}
               className="btn btn-primary"
             >
               Enter UniFY

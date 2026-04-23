@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import AnimatedSection from "@/components/AnimatedSection";
+import { trackStripeClick } from "@/lib/analytics";
 
 const inclusions = [
   {
@@ -256,6 +257,7 @@ export default function PrivateAdvisory() {
               href="https://buy.stripe.com/14AfZj6GQ2jE6E68Zc93y03"
               target="_blank"
               rel="noopener noreferrer"
+              onClick={() => trackStripeClick("private_mentorship")}
               className="btn btn-primary"
             >
               Enter Private Mentorship

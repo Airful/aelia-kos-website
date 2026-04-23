@@ -5,6 +5,7 @@ import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import AnimatedSection from "@/components/AnimatedSection";
+import { trackEnterPortal } from "@/lib/analytics";
 
 const traits = [
   <>You check the astrology <em>and</em> the analytics</>,
@@ -185,6 +186,7 @@ export default function PortalPage() {
           <div className="relative z-[2] mt-[26px] animate-[fadeUp_1s_ease_both_0.9s]">
             <Link
               href="/whats-inside"
+              onClick={() => trackEnterPortal("hero")}
               className="btn-ghost border-[rgba(224,224,224,0.55)] !text-[#E0E0E0] !opacity-100 hover:!border-[#A9540F]"
             >
               Enter the Portal
@@ -381,6 +383,7 @@ export default function PortalPage() {
               <div className="mt-8">
                 <Link
                   href="/whats-inside"
+                  onClick={() => trackEnterPortal("pricing")}
                   className="btn-ghost relative overflow-hidden !opacity-100 !text-[#E0E0E0] !border-[rgba(224,224,224,0.45)] hover:!border-[#A9540F]"
                 >
                   <span className="absolute inset-0 z-0 pointer-events-none">
@@ -455,6 +458,7 @@ export default function PortalPage() {
           <AnimatedSection delay={0.4}>
             <Link
               href="/whats-inside"
+              onClick={() => trackEnterPortal("cta")}
               className="btn-enter relative z-[1] overflow-hidden !text-[#E0E0E0] hover:!text-white"
             >
               <span className="absolute inset-0 z-0 pointer-events-none">
