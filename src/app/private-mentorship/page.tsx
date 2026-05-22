@@ -177,40 +177,43 @@ const benefits = [
   },
 ];
 
+const serif = { fontFamily: "var(--font-serif)" };
+
 export default function PrivateMentorship() {
   return (
-    <main className="min-h-screen bg-[#FAF8F5]">
+    <main className="min-h-screen bg-[#e8e4df] text-[#1a1510]">
       <Navigation />
 
       {/* Hero */}
-      <section className="min-h-[70vh] flex items-center justify-center pt-32 pb-20">
-        <div className="container-narrow text-center px-6">
-          <motion.div
+      <section className="min-h-[70vh] flex items-center justify-center pt-40 pb-24">
+        <div className="max-w-2xl text-center px-6">
+          <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
+            className="text-[10px] tracking-[0.3em] uppercase text-[#A9540F] mb-8"
           >
-            <p className="text-xs tracking-[0.3em] uppercase text-[#C9A962] mb-8">
-              An Invitation to Build
-            </p>
-          </motion.div>
+            An Invitation to Build
+          </motion.p>
 
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="font-display text-4xl md:text-5xl lg:text-6xl text-[#2C2825] mb-6"
+            className="text-4xl md:text-5xl lg:text-6xl font-light text-[#1a1510] leading-[1.1] mb-6"
+            style={serif}
           >
             Private Mentorship
             <br />
-            with <span className="italic text-[#8B6F5C]">Aelia Kos</span>
+            with <em className="italic text-[#A9540F]">Aelia Kos</em>
           </motion.h1>
 
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="font-display italic text-lg md:text-xl text-[#8B6F5C]"
+            className="text-lg md:text-xl text-[#7a7068] italic font-light"
+            style={serif}
           >
             9-Month Container
           </motion.p>
@@ -218,43 +221,49 @@ export default function PrivateMentorship() {
       </section>
 
       {/* Logistics row */}
-      <section className="pb-20">
-        <div className="container-wide px-6 lg:px-12">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-[#E5DDD3] border border-[#E5DDD3]">
-            <div className="bg-[#FAF8F5] px-6 py-8 text-center">
-              <p className="text-[10px] tracking-[0.28em] uppercase text-[#C9A962] mb-3">
+      <section className="pb-24 md:pb-32">
+        <div className="max-w-5xl mx-auto px-6 md:px-12">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-[#d0cbc4] border border-[#d0cbc4]">
+            <div className="bg-[#e8e4df] px-6 py-10 text-center">
+              <p className="text-[10px] tracking-[0.28em] uppercase text-[#A9540F] mb-4">
                 Duration
               </p>
-              <p className="font-display text-2xl text-[#2C2825]">9 Months</p>
+              <p className="text-2xl font-light text-[#1a1510]" style={serif}>
+                9 Months
+              </p>
             </div>
-            <div className="bg-[#FAF8F5] px-6 py-8 text-center">
-              <p className="text-[10px] tracking-[0.28em] uppercase text-[#C9A962] mb-3">
+            <div className="bg-[#e8e4df] px-6 py-10 text-center">
+              <p className="text-[10px] tracking-[0.28em] uppercase text-[#A9540F] mb-4">
                 Sessions
               </p>
-              <p className="font-display text-2xl text-[#2C2825]">2 × 1h Zoom</p>
-              <p className="text-sm text-[#8B6F5C] mt-1">bi-weekly</p>
+              <p className="text-2xl font-light text-[#1a1510]" style={serif}>
+                2 × 1h Zoom
+              </p>
+              <p className="text-sm text-[#7a7068] mt-1">bi-weekly</p>
             </div>
-            <div className="bg-[#FAF8F5] px-6 py-8 text-center">
-              <p className="text-[10px] tracking-[0.28em] uppercase text-[#C9A962] mb-3">
+            <div className="bg-[#e8e4df] px-6 py-10 text-center">
+              <p className="text-[10px] tracking-[0.28em] uppercase text-[#A9540F] mb-4">
                 Investment
               </p>
-              <p className="font-display text-2xl text-[#C9A962]">22,000 CHF</p>
-              <p className="text-sm text-[#8B6F5C] mt-1">or 2,600 / month</p>
+              <p className="text-2xl font-light text-[#A9540F]" style={serif}>
+                22,000 CHF
+              </p>
+              <p className="text-sm text-[#7a7068] mt-1">or 2,600 / month</p>
             </div>
           </div>
         </div>
       </section>
 
       {/* Intro */}
-      <section className="section-padding">
-        <div className="container-narrow text-center px-6">
+      <section className="py-20 md:py-28">
+        <div className="max-w-2xl mx-auto text-center px-6">
           <AnimatedSection>
-            <p className="font-display text-2xl md:text-3xl italic text-[#2C2825] mb-8">
+            <p className="text-2xl md:text-3xl italic text-[#1a1510] font-light mb-8 leading-[1.4]" style={serif}>
               Nine months. One business born with soul.
             </p>
           </AnimatedSection>
           <AnimatedSection delay={0.15}>
-            <p className="font-display text-lg text-[#5D4F45] leading-[1.85]">
+            <p className="text-base md:text-lg text-[#1a1510] leading-[1.85] font-light">
               This is not a coaching programme. It&apos;s a structured, ritualistic passage for
               founders who are ready to build something that holds both the mystical and the
               strategic. We work in trimesters, each one developing a different layer of your
@@ -266,24 +275,24 @@ export default function PrivateMentorship() {
       </section>
 
       {/* Architecture overview */}
-      <section className="pb-24">
-        <div className="container-wide px-6 lg:px-12">
+      <section className="pb-24 md:pb-32">
+        <div className="max-w-5xl mx-auto px-6 md:px-12">
           <AnimatedSection>
-            <p className="text-center text-xs tracking-[0.3em] uppercase text-[#C9A962] mb-10">
+            <p className="text-center text-[10px] tracking-[0.3em] uppercase text-[#A9540F] mb-12">
               The Architecture
             </p>
           </AnimatedSection>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-[#E5DDD3] border border-[#E5DDD3]">
-            {trimesters.map((t) => (
-              <AnimatedSection key={t.num} delay={0.1 * Number(t.num.length)}>
-                <div className="bg-[#FAF8F5] px-6 py-8 text-center h-full">
-                  <p className="text-[10px] tracking-[0.28em] uppercase text-[#C9A962] mb-3">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-[#d0cbc4] border border-[#d0cbc4]">
+            {trimesters.map((t, i) => (
+              <AnimatedSection key={t.num} delay={0.1 * i}>
+                <div className="bg-[#e8e4df] px-6 py-10 text-center h-full">
+                  <p className="text-[10px] tracking-[0.28em] uppercase text-[#A9540F] mb-4">
                     Trimester {t.num}
                   </p>
-                  <p className="font-display text-xl text-[#2C2825] mb-3">
+                  <p className="text-xl font-light text-[#1a1510] mb-4" style={serif}>
                     {t.overview.label}
                   </p>
-                  <div className="text-sm text-[#8B6F5C] leading-[1.9]">
+                  <div className="text-sm text-[#7a7068] leading-[2]">
                     {t.overview.points.map((p) => (
                       <div key={p}>{p}</div>
                     ))}
@@ -296,71 +305,85 @@ export default function PrivateMentorship() {
       </section>
 
       {/* Trimesters */}
-      {trimesters.map((t) => (
-        <section key={t.num} className="section-padding bg-[#F5EFE7]/40 even:bg-transparent">
-          <div className="container-wide px-6 lg:px-12">
+      {trimesters.map((t, ti) => (
+        <section
+          key={t.num}
+          className={`py-24 md:py-32 ${ti % 2 === 0 ? "bg-[#dedad4]/50" : ""}`}
+        >
+          <div className="max-w-6xl mx-auto px-6 md:px-12">
+            {/* Section divider */}
             <AnimatedSection>
-              <div className="text-center mb-12">
-                <p className="text-xs tracking-[0.3em] uppercase text-[#C9A962] mb-4">
-                  {t.range}
-                </p>
+              <div className="text-center mb-14 md:mb-16">
+                <div className="inline-flex items-center gap-4">
+                  <span className="block w-8 h-px bg-[#A9540F]/40" />
+                  <span className="text-[10px] tracking-[0.3em] uppercase text-[#A9540F]">
+                    {t.range}
+                  </span>
+                  <span className="block w-8 h-px bg-[#A9540F]/40" />
+                </div>
               </div>
             </AnimatedSection>
 
+            {/* Trimester header */}
             <AnimatedSection delay={0.1}>
-              <div className="text-center mb-16">
-                <p className="font-display text-7xl md:text-8xl text-[#C9A962]/30 italic leading-none mb-4">
+              <div className="text-center mb-16 md:mb-20">
+                <p className="text-7xl md:text-8xl text-[#A9540F]/25 italic leading-none mb-6" style={serif}>
                   {t.num}
                 </p>
-                <p className="text-xs tracking-[0.28em] uppercase text-[#8B6F5C] mb-3">
+                <p className="text-[10px] tracking-[0.28em] uppercase text-[#7a7068] mb-4">
                   {t.body}
                 </p>
-                <h2 className="font-display text-3xl md:text-4xl text-[#2C2825] mb-4">
+                <h2 className="text-3xl md:text-4xl font-light text-[#1a1510] mb-5" style={serif}>
                   {t.title}
                 </h2>
-                <p className="font-display italic text-lg text-[#8B6F5C]">
+                <p className="italic text-base md:text-lg text-[#7a7068] font-light max-w-xl mx-auto" style={serif}>
                   &ldquo;{t.theme}&rdquo;
                 </p>
               </div>
             </AnimatedSection>
 
+            {/* Months */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
               {t.months.map((m, i) => (
                 <AnimatedSection key={m.num} delay={0.1 + i * 0.1}>
-                  <article className="bg-white border border-[#E5DDD3] p-8 h-full flex flex-col">
+                  <article className="bg-[#f2ede8] border border-[#d0cbc4] p-8 h-full flex flex-col">
                     <div className="mb-5">
-                      <div className="text-3xl mb-2">{m.symbol}</div>
-                      <p className="text-[10px] tracking-[0.28em] uppercase text-[#C9A962] mb-1">
+                      <div className="text-3xl mb-3">{m.symbol}</div>
+                      <p className="text-[10px] tracking-[0.28em] uppercase text-[#A9540F] mb-1">
                         Month {m.num}
                       </p>
-                      <h3 className="font-display text-2xl text-[#2C2825]">{m.name}</h3>
-                      <p className="font-display italic text-[#8B6F5C] mt-1">{m.tagline}</p>
+                      <h3 className="text-2xl font-light text-[#1a1510]" style={serif}>
+                        {m.name}
+                      </h3>
+                      <p className="italic text-[#7a7068] mt-1 font-light" style={serif}>
+                        {m.tagline}
+                      </p>
                     </div>
 
                     <ul className="space-y-3 mb-6 flex-1">
                       {m.points.map((p, idx) => (
                         <li
                           key={idx}
-                          className="text-sm text-[#5D4F45] leading-[1.7] pl-4 relative"
+                          className="text-sm text-[#1a1510] leading-[1.75] pl-4 relative font-light"
                         >
-                          <span className="absolute left-0 top-2 w-1 h-1 rounded-full bg-[#C9A962]" />
+                          <span className="absolute left-0 top-2 w-1 h-1 rounded-full bg-[#A9540F]" />
                           {p}
                         </li>
                       ))}
                     </ul>
 
-                    <div className="border-t border-[#E5DDD3] pt-4 space-y-3">
+                    <div className="border-t border-[#d0cbc4] pt-4 space-y-3">
                       <div>
-                        <p className="text-[10px] tracking-[0.22em] uppercase text-[#C9A962]">
+                        <p className="text-[10px] tracking-[0.22em] uppercase text-[#A9540F]">
                           {m.ritualLabel}
                         </p>
-                        <p className="text-sm text-[#2C2825] mt-0.5">{m.ritual}</p>
+                        <p className="text-sm text-[#1a1510] mt-0.5">{m.ritual}</p>
                       </div>
                       <div>
-                        <p className="text-[10px] tracking-[0.22em] uppercase text-[#C9A962]">
+                        <p className="text-[10px] tracking-[0.22em] uppercase text-[#A9540F]">
                           You leave with
                         </p>
-                        <p className="text-sm text-[#2C2825] mt-0.5">{m.leaveWith}</p>
+                        <p className="text-sm text-[#1a1510] mt-0.5">{m.leaveWith}</p>
                       </div>
                     </div>
                   </article>
@@ -372,27 +395,29 @@ export default function PrivateMentorship() {
       ))}
 
       {/* Benefits */}
-      <section className="section-padding">
-        <div className="container-narrow px-6">
+      <section className="py-24 md:py-32">
+        <div className="max-w-3xl mx-auto px-6">
           <AnimatedSection>
-            <p className="text-center text-xs tracking-[0.3em] uppercase text-[#C9A962] mb-4">
+            <p className="text-center text-[10px] tracking-[0.3em] uppercase text-[#A9540F] mb-5">
               What&apos;s Included · Beyond the Sessions
             </p>
-            <h2 className="text-center font-display text-3xl md:text-4xl text-[#2C2825] mb-12">
+            <h2 className="text-center text-3xl md:text-4xl font-light text-[#1a1510] mb-14" style={serif}>
               Extended Access to the Universe Ecosystem
             </h2>
           </AnimatedSection>
 
-          <div className="space-y-8">
+          <div className="space-y-6">
             {benefits.map((b, i) => (
               <AnimatedSection key={b.num} delay={0.1 + i * 0.1}>
-                <div className="flex gap-6 bg-white border border-[#E5DDD3] p-8">
-                  <div className="font-display text-4xl text-[#C9A962]/50 italic shrink-0">
+                <div className="flex gap-6 bg-[#f2ede8] border border-[#d0cbc4] p-8">
+                  <div className="text-4xl text-[#A9540F]/40 italic shrink-0 leading-none" style={serif}>
                     {b.num}
                   </div>
                   <div>
-                    <h3 className="font-display text-xl text-[#2C2825] mb-3">{b.title}</h3>
-                    <p className="text-[#5D4F45] leading-[1.85]">{b.desc}</p>
+                    <h3 className="text-xl font-light text-[#1a1510] mb-3" style={serif}>
+                      {b.title}
+                    </h3>
+                    <p className="text-[#1a1510] leading-[1.85] font-light">{b.desc}</p>
                   </div>
                 </div>
               </AnimatedSection>
@@ -402,24 +427,32 @@ export default function PrivateMentorship() {
       </section>
 
       {/* Investment + CTA */}
-      <section className="section-padding bg-[#F5EFE7]/40">
-        <div className="container-narrow text-center px-6">
+      <section className="py-24 md:py-32 bg-[#dedad4]/50">
+        <div className="max-w-3xl mx-auto text-center px-6">
           <AnimatedSection>
-            <p className="text-xs tracking-[0.3em] uppercase text-[#C9A962] mb-8">Investment</p>
+            <p className="text-[10px] tracking-[0.3em] uppercase text-[#A9540F] mb-10">
+              Investment
+            </p>
           </AnimatedSection>
 
           <AnimatedSection delay={0.1}>
-            <div className="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-16 mb-12">
+            <div className="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-16 mb-14">
               <div>
-                <p className="font-display text-5xl md:text-6xl text-[#2C2825]">22,000 CHF</p>
-                <p className="text-sm tracking-[0.2em] uppercase text-[#8B6F5C] mt-3">
+                <p className="text-5xl md:text-6xl font-light text-[#1a1510]" style={serif}>
+                  22,000 CHF
+                </p>
+                <p className="text-xs tracking-[0.22em] uppercase text-[#7a7068] mt-3">
                   Paid in Full
                 </p>
               </div>
-              <p className="font-display italic text-2xl text-[#C9A962]">or</p>
+              <p className="italic text-2xl text-[#A9540F]" style={serif}>
+                or
+              </p>
               <div>
-                <p className="font-display text-5xl md:text-6xl text-[#2C2825]">2,600 CHF</p>
-                <p className="text-sm tracking-[0.2em] uppercase text-[#8B6F5C] mt-3">
+                <p className="text-5xl md:text-6xl font-light text-[#1a1510]" style={serif}>
+                  2,600 CHF
+                </p>
+                <p className="text-xs tracking-[0.22em] uppercase text-[#7a7068] mt-3">
                   Per Month · 9 Months
                 </p>
               </div>
@@ -427,7 +460,7 @@ export default function PrivateMentorship() {
           </AnimatedSection>
 
           <AnimatedSection delay={0.2}>
-            <p className="font-display italic text-lg text-[#8B6F5C] mb-10 max-w-xl mx-auto">
+            <p className="italic text-base md:text-lg text-[#7a7068] mb-12 max-w-xl mx-auto font-light leading-relaxed" style={serif}>
               This container is offered to a very limited number of founders per year. If you feel
               the pull, trust it.
             </p>
@@ -436,11 +469,11 @@ export default function PrivateMentorship() {
           <AnimatedSection delay={0.3}>
             <a
               href="mailto:aelia@aeliakos.com?subject=Private%20Mentorship%20%E2%80%94%209-Month%20Container"
-              className="btn btn-primary"
+              className="btn-ghost border-[#1a1510]/20 text-[#1a1510] hover:border-[#A9540F]"
             >
               Contact Aelia
             </a>
-            <p className="font-display text-sm text-[#8B6F5C] italic mt-6">
+            <p className="text-sm text-[#7a7068] italic mt-6 font-light" style={serif}>
               A brief Mutual Alignment Conversation precedes entry to confirm coherence on both sides.
             </p>
           </AnimatedSection>
