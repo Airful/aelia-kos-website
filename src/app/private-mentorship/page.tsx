@@ -212,7 +212,7 @@ export default function PrivateMentorship() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="text-lg md:text-xl text-[#7a7068] italic font-light"
+            className="text-lg md:text-xl text-[#5d544a] italic font-light"
             style={serif}
           >
             9-Month Container
@@ -239,7 +239,7 @@ export default function PrivateMentorship() {
               <p className="text-2xl font-light text-[#1a1510]" style={serif}>
                 2 × 1h Zoom
               </p>
-              <p className="text-sm text-[#7a7068] mt-1">bi-weekly</p>
+              <p className="text-sm text-[#5d544a] mt-1">bi-weekly</p>
             </div>
             <div className="bg-[#e8e4df] px-6 py-10 text-center">
               <p className="text-[10px] tracking-[0.28em] uppercase text-[#A9540F] mb-4">
@@ -248,7 +248,7 @@ export default function PrivateMentorship() {
               <p className="text-2xl font-light text-[#A9540F]" style={serif}>
                 22,000 CHF
               </p>
-              <p className="text-sm text-[#7a7068] mt-1">or 2,600 / month</p>
+              <p className="text-sm text-[#5d544a] mt-1">or 2,600 / month</p>
             </div>
           </div>
         </div>
@@ -292,7 +292,7 @@ export default function PrivateMentorship() {
                   <p className="text-xl font-light text-[#1a1510] mb-4" style={serif}>
                     {t.overview.label}
                   </p>
-                  <div className="text-sm text-[#7a7068] leading-[2]">
+                  <div className="text-sm text-[#5d544a] leading-[2]">
                     {t.overview.points.map((p) => (
                       <div key={p}>{p}</div>
                     ))}
@@ -330,13 +330,13 @@ export default function PrivateMentorship() {
                 <p className="text-7xl md:text-8xl text-[#A9540F]/25 italic leading-none mb-6" style={serif}>
                   {t.num}
                 </p>
-                <p className="text-[10px] tracking-[0.28em] uppercase text-[#7a7068] mb-4">
+                <p className="text-[10px] tracking-[0.28em] uppercase text-[#5d544a] mb-4">
                   {t.body}
                 </p>
                 <h2 className="text-3xl md:text-4xl font-light text-[#1a1510] mb-5" style={serif}>
                   {t.title}
                 </h2>
-                <p className="italic text-base md:text-lg text-[#7a7068] font-light max-w-xl mx-auto" style={serif}>
+                <p className="italic text-base md:text-lg text-[#5d544a] font-light max-w-xl mx-auto" style={serif}>
                   &ldquo;{t.theme}&rdquo;
                 </p>
               </div>
@@ -355,7 +355,7 @@ export default function PrivateMentorship() {
                       <h3 className="text-2xl font-light text-[#1a1510]" style={serif}>
                         {m.name}
                       </h3>
-                      <p className="italic text-[#7a7068] mt-1 font-light" style={serif}>
+                      <p className="italic text-[#5d544a] mt-1 font-light" style={serif}>
                         {m.tagline}
                       </p>
                     </div>
@@ -441,7 +441,7 @@ export default function PrivateMentorship() {
                 <p className="text-5xl md:text-6xl font-light text-[#1a1510]" style={serif}>
                   22,000 CHF
                 </p>
-                <p className="text-xs tracking-[0.22em] uppercase text-[#7a7068] mt-3">
+                <p className="text-xs tracking-[0.22em] uppercase text-[#5d544a] mt-3">
                   Paid in Full
                 </p>
               </div>
@@ -452,7 +452,7 @@ export default function PrivateMentorship() {
                 <p className="text-5xl md:text-6xl font-light text-[#1a1510]" style={serif}>
                   2,600 CHF
                 </p>
-                <p className="text-xs tracking-[0.22em] uppercase text-[#7a7068] mt-3">
+                <p className="text-xs tracking-[0.22em] uppercase text-[#5d544a] mt-3">
                   Per Month · 9 Months
                 </p>
               </div>
@@ -460,7 +460,7 @@ export default function PrivateMentorship() {
           </AnimatedSection>
 
           <AnimatedSection delay={0.2}>
-            <p className="italic text-base md:text-lg text-[#7a7068] mb-12 max-w-xl mx-auto font-light leading-relaxed" style={serif}>
+            <p className="italic text-base md:text-lg text-[#5d544a] mb-12 max-w-xl mx-auto font-light leading-relaxed" style={serif}>
               This container is offered to a very limited number of founders per year. If you feel
               the pull, trust it.
             </p>
@@ -473,7 +473,7 @@ export default function PrivateMentorship() {
             >
               Contact Aelia
             </a>
-            <p className="text-sm text-[#7a7068] italic mt-6 font-light" style={serif}>
+            <p className="text-sm text-[#5d544a] italic mt-6 font-light" style={serif}>
               A brief Mutual Alignment Conversation precedes entry to confirm coherence on both sides.
             </p>
           </AnimatedSection>

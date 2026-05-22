@@ -68,7 +68,7 @@ export default function BookingClient() {
             <br />
             <em className="italic text-[#A9540F]">Connection Session</em>
           </h1>
-          <p className="text-[15px] leading-[1.85] font-light text-[#7a7068] max-w-[520px] mx-auto">
+          <p className="text-[15px] leading-[1.85] font-light text-[#5d544a] max-w-[520px] mx-auto">
             A space to explore what is moving, what is ready, and what wants to
             emerge next. No pitch. No pressure. Just presence and clarity.
           </p>

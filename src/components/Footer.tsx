@@ -16,7 +16,7 @@ export default function Footer() {
         <li>
           <Link
             href="/portal"
-            className="text-[9px] tracking-[2px] uppercase text-[#7a7068] no-underline hover:text-[#1a1510] transition-colors"
+            className="text-[9px] tracking-[2px] uppercase text-[#5d544a] no-underline hover:text-[#1a1510] transition-colors"
           >
             Universe Portal
           </Link>
@@ -24,7 +24,7 @@ export default function Footer() {
         <li>
           <Link
             href="#experiences"
-            className="text-[9px] tracking-[2px] uppercase text-[#7a7068] no-underline hover:text-[#1a1510] transition-colors"
+            className="text-[9px] tracking-[2px] uppercase text-[#5d544a] no-underline hover:text-[#1a1510] transition-colors"
           >
             Experiences
           </Link>
@@ -32,7 +32,7 @@ export default function Footer() {
         <li>
           <Link
             href="#mentorship"
-            className="text-[9px] tracking-[2px] uppercase text-[#7a7068] no-underline hover:text-[#1a1510] transition-colors"
+            className="text-[9px] tracking-[2px] uppercase text-[#5d544a] no-underline hover:text-[#1a1510] transition-colors"
           >
             Mentorship
           </Link>
@@ -40,14 +40,14 @@ export default function Footer() {
         <li>
           <a
             href="mailto:aelia@aeliakos.com"
-            className="text-[9px] tracking-[2px] uppercase text-[#7a7068] no-underline hover:text-[#1a1510] transition-colors"
+            className="text-[9px] tracking-[2px] uppercase text-[#5d544a] no-underline hover:text-[#1a1510] transition-colors"
           >
             aelia@aeliakos.com
           </a>
         </li>
       </ul>
 
-      <p className="text-[10px] text-[#7a7068] opacity-50 tracking-[1px]">
+      <p className="text-[10px] text-[#5d544a] opacity-50 tracking-[1px]">
         &copy; {new Date().getFullYear()} Aelia Kos &middot; aeliakos.com
       </p>
     </footer>

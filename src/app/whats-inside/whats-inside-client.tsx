@@ -111,7 +111,7 @@ export function WhatsInsideClient() {
             className="h-[38px] w-auto opacity-85 hover:opacity-100 transition-opacity"
           />
         </Link>
-        <span className="text-[10px] tracking-[0.22em] uppercase text-[#7a7068]">
+        <span className="text-[10px] tracking-[0.22em] uppercase text-[#5d544a]">
           Step 1 of 2 &middot;{" "}
           <em className="not-italic text-[#A9540F]">Review your membership</em>
         </span>
@@ -172,7 +172,7 @@ export function WhatsInsideClient() {
                 >
                   {o.title}
                 </h3>
-                <p className="text-[13.5px] leading-[1.85] text-[#7a7068] font-light mb-4">
+                <p className="text-[13.5px] leading-[1.85] text-[#5d544a] font-light mb-4">
                   {o.desc}
                 </p>
                 <span className="text-[10px] tracking-[0.16em] uppercase text-[#A9540F] opacity-60">
@@ -304,7 +304,7 @@ export function WhatsInsideClient() {
             </span>
             <span className="relative z-[1]">Register Interest</span>
           </Link>
-          <p className="text-[12px] text-[#7a7068] mt-5 tracking-wide">
+          <p className="text-[12px] text-[#5d544a] mt-5 tracking-wide">
             No payment required &nbsp;&middot;&nbsp; We&apos;ll be in touch when
             the Portal is ready
           </p>

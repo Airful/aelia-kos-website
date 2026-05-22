@@ -1,0 +1,7 @@
+[       1ms] [WARNING] <link rel=preload> uses an unsupported `as` value @ https://buy.stripe.com/14AfZj6GQ2jE6E68Zc93y03:0
+[       1ms] [WARNING] <link rel=preload> uses an unsupported `as` value @ https://buy.stripe.com/14AfZj6GQ2jE6E68Zc93y03:0
+[    3308ms] [ERROR] Framing 'https://client.wra-api.net/' violates the following Content Security Policy directive: "frame-src 'self' https://*.px-cloud.net https://*.px-cdn.net https://crcldu.com". The request has been blocked.
+ @ https://client.px-cloud.net/:0
+[    3316ms] [WARNING] Failed to execute 'postMessage' on 'DOMWindow': The target origin provided ('https://client.wra-api.net') does not match the recipient window's origin ('null'). @ https://client.px-cloud.net/PXVl48pWoc/main.min.js:2
+[   50074ms] [ERROR] Failed to load resource: the server responded with a status of 403 () @ https://api.stripe.com/v1/consumers/sessions/lookup:0
+[  145255ms] [ERROR] Failed to load resource: the server responded with a status of 400 () @ https://api.stripe.com/v1/payment_methods:0

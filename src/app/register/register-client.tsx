@@ -166,7 +166,7 @@ export function RegisterClient() {
                 <div className="space-y-1.5">
                   <label
                     htmlFor="name"
-                    className="text-[10px] tracking-[0.2em] uppercase text-[#7a7068]"
+                    className="text-[10px] tracking-[0.2em] uppercase text-[#5d544a]"
                   >
                     Full Name *
                   </label>
@@ -176,7 +176,7 @@ export function RegisterClient() {
                     required
                     value={name}
                     onChange={(e) => setName(e.target.value)}
-                    className="w-full bg-white/40 border border-[rgba(26,21,16,0.12)] rounded-none px-4 py-3 text-[15px] font-light text-[#1a1510] outline-none focus:border-[#A9540F] transition-colors placeholder:text-[#7a7068]/50"
+                    className="w-full bg-white/40 border border-[rgba(26,21,16,0.12)] rounded-none px-4 py-3 text-[15px] font-light text-[#1a1510] outline-none focus:border-[#A9540F] transition-colors placeholder:text-[#5d544a]/50"
                     placeholder="Your full name"
                   />
                 </div>
@@ -184,7 +184,7 @@ export function RegisterClient() {
                 <div className="space-y-1.5">
                   <label
                     htmlFor="email"
-                    className="text-[10px] tracking-[0.2em] uppercase text-[#7a7068]"
+                    className="text-[10px] tracking-[0.2em] uppercase text-[#5d544a]"
                   >
                     Email *
                   </label>
@@ -194,7 +194,7 @@ export function RegisterClient() {
                     required
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
-                    className="w-full bg-white/40 border border-[rgba(26,21,16,0.12)] rounded-none px-4 py-3 text-[15px] font-light text-[#1a1510] outline-none focus:border-[#A9540F] transition-colors placeholder:text-[#7a7068]/50"
+                    className="w-full bg-white/40 border border-[rgba(26,21,16,0.12)] rounded-none px-4 py-3 text-[15px] font-light text-[#1a1510] outline-none focus:border-[#A9540F] transition-colors placeholder:text-[#5d544a]/50"
                     placeholder="your@email.com"
                   />
                 </div>
@@ -202,7 +202,7 @@ export function RegisterClient() {
                 <div className="space-y-1.5">
                   <label
                     htmlFor="phone"
-                    className="text-[10px] tracking-[0.2em] uppercase text-[#7a7068]"
+                    className="text-[10px] tracking-[0.2em] uppercase text-[#5d544a]"
                   >
                     Phone Number
                   </label>
@@ -211,7 +211,7 @@ export function RegisterClient() {
                     type="tel"
                     value={phone}
                     onChange={(e) => setPhone(e.target.value)}
-                    className="w-full bg-white/40 border border-[rgba(26,21,16,0.12)] rounded-none px-4 py-3 text-[15px] font-light text-[#1a1510] outline-none focus:border-[#A9540F] transition-colors placeholder:text-[#7a7068]/50"
+                    className="w-full bg-white/40 border border-[rgba(26,21,16,0.12)] rounded-none px-4 py-3 text-[15px] font-light text-[#1a1510] outline-none focus:border-[#A9540F] transition-colors placeholder:text-[#5d544a]/50"
                     placeholder="+1 234 567 8900"
                   />
                 </div>
@@ -238,7 +238,7 @@ export function RegisterClient() {
                   </span>
                 </button>
 
-                <p className="text-[11px] text-[#7a7068] text-center mt-3">
+                <p className="text-[11px] text-[#5d544a] text-center mt-3">
                   No payment required &middot; We&apos;ll only reach out about the
                   Portal
                 </p>

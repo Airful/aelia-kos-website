@@ -28,7 +28,7 @@ export default function Home() {
           Aelia Kos
         </h1>
 
-        <p className="text-[11px] tracking-[5px] uppercase text-[#7a7068] mt-7 leading-[2.2] opacity-0 animate-[riseIn_1.4s_0.35s_ease_forwards]">
+        <p className="text-[11px] tracking-[5px] uppercase text-[#5d544a] mt-7 leading-[2.2] opacity-0 animate-[riseIn_1.4s_0.35s_ease_forwards]">
           Where Mystical High-Achievers
           <br />
           Build Businesses with Soul
@@ -140,7 +140,7 @@ export default function Home() {
                 >
                   {el.symbol}
                 </span>
-                <span className="text-[8px] tracking-[4px] uppercase text-[#7a7068]">
+                <span className="text-[8px] tracking-[4px] uppercase text-[#5d544a]">
                   {el.name}
                 </span>
               </div>
@@ -172,7 +172,7 @@ export default function Home() {
         </AnimatedSection>
 
         <AnimatedSection delay={0.2}>
-          <p className="text-[15px] leading-[1.85] font-light text-[#7a7068] max-w-[540px] mx-auto mb-10">
+          <p className="text-[15px] leading-[1.85] font-light text-[#5d544a] max-w-[540px] mx-auto mb-10">
             Through place, trust, and shared presence. These are not retreats.
             They are field activations — immersive gatherings across extraordinary
             locations where the right people, energy, and timing converge.
@@ -215,7 +215,7 @@ export default function Home() {
           </AnimatedSection>
 
           <AnimatedSection delay={0.2}>
-            <p className="text-[15px] leading-[1.85] font-light text-[#7a7068] max-w-[540px] mx-auto mb-4">
+            <p className="text-[15px] leading-[1.85] text-[#b5aca2] max-w-[540px] mx-auto mb-4">
               A time-bound advisory structure for those navigating moments where
               identity, leadership, and structure reorganize simultaneously.
               This work concerns clarity, coherence, and placement.
@@ -231,7 +231,7 @@ export default function Home() {
                 >
                   9–12
                 </span>
-                <p className="text-[8px] tracking-[4px] uppercase text-[#7a7068] mt-1">
+                <p className="text-[8px] tracking-[4px] uppercase text-[#b5aca2] mt-1">
                   Months
                 </p>
               </div>
@@ -243,7 +243,7 @@ export default function Home() {
                 >
                   22,000 €
                 </span>
-                <p className="text-[8px] tracking-[4px] uppercase text-[#7a7068] mt-1">
+                <p className="text-[8px] tracking-[4px] uppercase text-[#b5aca2] mt-1">
                   Investment
                 </p>
               </div>

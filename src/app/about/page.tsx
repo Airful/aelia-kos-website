@@ -72,7 +72,7 @@ export default function About() {
 
           <div className="opacity-0 animate-[riseIn_1.4s_0.5s_ease_forwards] max-w-2xl mx-auto">
             <p
-              className="text-xl text-[#7a7068] leading-relaxed"
+              className="text-xl text-[#5d544a] leading-relaxed"
               style={{ fontFamily: "var(--font-serif)" }}
             >
               I&apos;m Aelia Kos — and if you&apos;re reading this,
@@ -104,19 +104,19 @@ export default function About() {
             </AnimatedSection>
 
             <AnimatedSection direction="right">
-              <p className="text-[15px] leading-[1.85] font-light text-[#7a7068] mb-6">
+              <p className="text-[15px] leading-[1.85] font-light text-[#5d544a] mb-6">
                 I&apos;ve lived and built across continents, navigated my own
                 significant thresholds, and spent over a decade designing the
                 conditions under which people, businesses, and visions become
                 what they were always meant to be.
               </p>
 
-              <p className="text-[15px] leading-[1.85] font-light text-[#7a7068] mb-6">
+              <p className="text-[15px] leading-[1.85] font-light text-[#5d544a] mb-6">
                 I know this terrain — not from theory, but from having crossed
                 it myself, more than once, in more than one life.
               </p>
 
-              <p className="text-[15px] leading-[1.85] font-light text-[#7a7068] mb-6">
+              <p className="text-[15px] leading-[1.85] font-light text-[#5d544a] mb-6">
                 What I do now is not separate from what I&apos;ve lived. The
                 architecture training, the Olympic operations, the retreats in
                 the mountains, the research into water and consciousness, the
@@ -124,7 +124,7 @@ export default function About() {
                 self — all of it is present in the room when we work together.
               </p>
 
-              <p className="text-[15px] leading-[1.85] font-light text-[#7a7068]">
+              <p className="text-[15px] leading-[1.85] font-light text-[#5d544a]">
                 I work at the intersection of{" "}
                 <strong className="text-[#1a1510]">
                   business, spirituality, and the effortless embodiment of pure
@@ -152,18 +152,18 @@ export default function About() {
             >
               Every engagement begins the same way: I read the field.
             </p>
-            <p className="text-[15px] leading-[1.85] font-light text-[#7a7068] max-w-[680px] mb-6">
+            <p className="text-[15px] leading-[1.85] font-light text-[#5d544a] max-w-[680px] mb-6">
               Not the business plan, not the strategy deck — the actual field of
               potential that exists around you and what you&apos;re building.
               What&apos;s alive in it, what&apos;s blocked, what&apos;s ready to
               move.
             </p>
-            <p className="text-[15px] leading-[1.85] font-light text-[#7a7068] max-w-[680px] mb-6">
+            <p className="text-[15px] leading-[1.85] font-light text-[#5d544a] max-w-[680px] mb-6">
               From there, I design the container — the right conditions, the
               right connections, the right environment — for what is genuinely
               possible to emerge without forcing it.
             </p>
-            <p className="text-[15px] leading-[1.85] font-light text-[#7a7068] max-w-[680px]">
+            <p className="text-[15px] leading-[1.85] font-light text-[#5d544a] max-w-[680px]">
               This is where my background in architecture becomes something more
               than a credential. I was trained to see structures before they
               exist — to sense what a space wants to become and design toward
@@ -199,7 +199,7 @@ export default function About() {
                   >
                     {principle.title}
                   </h3>
-                  <p className="text-[#7a7068] text-sm leading-relaxed font-light">
+                  <p className="text-[#5d544a] text-sm leading-relaxed font-light">
                     {principle.description}
                   </p>
                 </div>
@@ -225,33 +225,33 @@ export default function About() {
                 The path that led me here is not linear.
               </p>
 
-              <p className="text-[15px] leading-[1.85] font-light text-[#7a7068] mb-6">
+              <p className="text-[15px] leading-[1.85] font-light text-[#b5aca2] mb-6">
                 I don&apos;t share it as a list of credentials. I share it
                 because the work I do is inseparable from what I&apos;ve lived.
                 Every transition I facilitate in others, I have moved through
                 myself.
               </p>
 
-              <p className="text-[15px] leading-[1.85] font-light text-[#7a7068] mb-6">
+              <p className="text-[15px] leading-[1.85] font-light text-[#b5aca2] mb-6">
                 I trained as an architect and spent years designing spaces —
                 physical, digital, and energetic — where transformation could
                 actually land.
               </p>
 
-              <p className="text-[15px] leading-[1.85] font-light text-[#7a7068] mb-6">
+              <p className="text-[15px] leading-[1.85] font-light text-[#b5aca2] mb-6">
                 I managed large-scale operations across three Olympic Games,
                 working with complex systems, intercultural teams, and decisions
                 made under real pressure.
               </p>
 
-              <p className="text-[15px] leading-[1.85] font-light text-[#7a7068] mb-6">
+              <p className="text-[15px] leading-[1.85] font-light text-[#b5aca2] mb-6">
                 I&apos;ve built companies across the Americas, Europe and MENA,
                 lived and worked across countries, and spent a decade designing
                 business frameworks, immersive experiences, and mentorship
                 containers for collective intelligence.
               </p>
 
-              <p className="text-[15px] leading-[1.85] font-light text-[#7a7068] mb-8">
+              <p className="text-[15px] leading-[1.85] font-light text-[#b5aca2] mb-8">
                 Alongside that: studies across spiritual traditions, research
                 into consciousness and water, and years of navigating
                 significant personal and financial transitions of my own.
@@ -290,7 +290,7 @@ export default function About() {
           </AnimatedSection>
 
           <AnimatedSection delay={0.1}>
-            <p className="text-[15px] leading-[1.85] font-light text-[#7a7068] mb-10 text-left">
+            <p className="text-[15px] leading-[1.85] font-light text-[#5d544a] mb-10 text-left">
               I&apos;ve watched too many gifted people quietly believe that
               choosing depth means giving up scale — that pursuing soul means
               accepting less. I don&apos;t believe that. I&apos;ve never
@@ -308,7 +308,7 @@ export default function About() {
           </AnimatedSection>
 
           <AnimatedSection delay={0.2}>
-            <div className="text-[15px] leading-[1.85] font-light text-[#7a7068] space-y-5 mb-10 text-left">
+            <div className="text-[15px] leading-[1.85] font-light text-[#5d544a] space-y-5 mb-10 text-left">
               <p>
                 They become so only when one is pursued at the expense of the
                 other, or when neither has been fully understood. When
@@ -365,7 +365,7 @@ export default function About() {
 
           <AnimatedSection delay={0.2}>
             <p
-              className="text-lg text-[#7a7068] mb-4"
+              className="text-lg text-[#b5aca2] mb-4"
               style={{ fontFamily: "var(--font-serif)" }}
             >
               Not because of exclusivity for its own sake — but because this
@@ -375,7 +375,7 @@ export default function About() {
               to move with it.
             </p>
             <p
-              className="text-lg text-[#7a7068] mb-8"
+              className="text-lg text-[#b5aca2] mb-8"
               style={{ fontFamily: "var(--font-serif)" }}
             >
               If what is written here resonates with you, it&apos;s likely
@@ -422,7 +422,7 @@ export default function About() {
                   >
                     {pathway.title}
                   </h3>
-                  <p className="text-[#7a7068] text-sm leading-relaxed font-light mb-8 flex-1">
+                  <p className="text-[#5d544a] text-sm leading-relaxed font-light mb-8 flex-1">
                     {pathway.description}
                   </p>
                   <a href={pathway.href} className="btn-ghost self-start">

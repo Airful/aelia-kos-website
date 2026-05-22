@@ -222,7 +222,7 @@ export default function PortalPage() {
           </AnimatedSection>
 
           <AnimatedSection delay={0.2}>
-            <p className="text-[15px] leading-[1.85] font-light text-[#7a7068] max-w-[540px]">
+            <p className="text-[15px] leading-[1.85] font-light text-[#5d544a] max-w-[540px]">
               You sense things before they happen. You check the astrology{" "}
               <em
                 className="italic text-[#1a1510]"
@@ -240,7 +240,7 @@ export default function PortalPage() {
               <AnimatedSection key={i} delay={0.3 + i * 0.08}>
                 <div className="flex items-start gap-[18px] py-4 border-b border-[rgba(232,228,223,0.18)]">
                   <div className="w-1 h-1 rounded-full bg-[#A9540F] shrink-0 mt-[10px] opacity-70" />
-                  <div className="text-sm leading-[1.8] font-light text-[#7a7068] [&>em]:italic [&>em]:text-[#1a1510] [&>em]:text-base" style={{ fontFamily: "var(--font-sans)" }}>
+                  <div className="text-sm leading-[1.8] font-light text-[#5d544a] [&>em]:italic [&>em]:text-[#1a1510] [&>em]:text-base" style={{ fontFamily: "var(--font-sans)" }}>
                     {trait}
                   </div>
                 </div>
@@ -288,7 +288,7 @@ export default function PortalPage() {
                   >
                     {o.title}
                   </div>
-                  <p className="text-[13.5px] leading-[1.85] text-[#7a7068] font-light">
+                  <p className="text-[13.5px] leading-[1.85] text-[#5d544a] font-light">
                     {o.desc}
                   </p>
                 </div>
@@ -346,7 +346,7 @@ export default function PortalPage() {
               >
                 Aelia <em className="italic text-[#A9540F]">Kos</em>
               </div>
-              <div className="text-[15px] leading-[1.85] font-light text-[#7a7068] max-w-[540px] space-y-3.5">
+              <div className="text-[15px] leading-[1.85] font-light text-[#5d544a] max-w-[540px] space-y-3.5">
                 <p>
                   Hi, I&apos;m Aelia — architect, experience designer, business
                   mentor and founder of Universe Club.
@@ -433,7 +433,7 @@ export default function PortalPage() {
               >
                 111
               </div>
-              <div className="text-[11px] tracking-[0.2em] uppercase text-[#7a7068] mt-2.5">
+              <div className="text-[11px] tracking-[0.2em] uppercase text-[#5d544a] mt-2.5">
                 per month &middot; cancel anytime
               </div>
               <div
@@ -446,7 +446,7 @@ export default function PortalPage() {
           </AnimatedSection>
 
           <AnimatedSection delay={0.3}>
-            <p className="text-sm leading-[1.85] text-[#7a7068] max-w-[400px] mx-auto mt-8 mb-11 relative z-[1]">
+            <p className="text-sm leading-[1.85] text-[#5d544a] max-w-[400px] mx-auto mt-8 mb-11 relative z-[1]">
               No contracts. No complicated tiers.
               <br />
               <span className="opacity-55">
@@ -529,7 +529,7 @@ export default function PortalPage() {
             <br />
             the <em className="italic text-[#A9540F]">Portal</em>
           </h1>
-          <p className="text-sm leading-[1.85] text-[#7a7068] max-w-[460px]">
+          <p className="text-sm leading-[1.85] text-[#5d544a] max-w-[460px]">
             Welcome. You will receive a confirmation by email shortly.
             <br />
             <br />

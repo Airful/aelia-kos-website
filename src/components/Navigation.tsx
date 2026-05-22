@@ -48,7 +48,7 @@ export default function Navigation() {
             <li key={link.href}>
               <Link
                 href={link.href}
-                className="text-[9px] tracking-[3px] uppercase text-[#7a7068] no-underline hover:text-[#1a1510] transition-colors"
+                className="text-[9px] tracking-[3px] uppercase text-[#5d544a] no-underline hover:text-[#1a1510] transition-colors"
               >
                 {link.label}
               </Link>
