@@ -9,6 +9,7 @@ const navLinks = [
   { href: "#portals", label: "Offerings" },
   { href: "/about", label: "About" },
   { href: "/portal", label: "Universe Portal" },
+  { href: "/private-mentorship", label: "Mentorship" },
   { href: "mailto:aelia@aeliakos.com", label: "Contact" },
 ];
 
