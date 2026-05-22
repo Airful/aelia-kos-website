@@ -86,8 +86,8 @@ export default function Home() {
 
           {/* Mentorship */}
           <AnimatedSection delay={0.2}>
-            <a
-              href="#mentorship"
+            <Link
+              href="/private-mentorship"
               className="flex flex-col items-center no-underline text-inherit cursor-pointer group"
             >
               <div className="w-full border border-[rgba(26,21,16,0.3)] rounded-t-[500px] bg-transparent aspect-[0.6] transition-all duration-400 group-hover:border-[rgba(26,21,16,0.55)] group-hover:bg-[rgba(26,21,16,0.03)]" />
@@ -97,7 +97,7 @@ export default function Home() {
               >
                 Mentorship
               </div>
-            </a>
+            </Link>
           </AnimatedSection>
         </div>
       </section>
@@ -251,12 +251,20 @@ export default function Home() {
           </AnimatedSection>
 
           <AnimatedSection delay={0.3}>
-            <a
-              href="mailto:aelia@aeliakos.com"
-              className="btn-ghost !border-[rgba(242,237,232,0.15)] !text-[#f2ede8]"
-            >
-              Begin a conversation
-            </a>
+            <div className="flex flex-wrap justify-center gap-4">
+              <Link
+                href="/private-mentorship"
+                className="btn-ghost !border-[rgba(242,237,232,0.15)] !text-[#f2ede8]"
+              >
+                Explore the container
+              </Link>
+              <a
+                href="mailto:aelia@aeliakos.com"
+                className="btn-ghost !border-[rgba(242,237,232,0.15)] !text-[#f2ede8]"
+              >
+                Begin a conversation
+              </a>
+            </div>
           </AnimatedSection>
         </div>
       </section>
