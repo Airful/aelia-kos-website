@@ -2,16 +2,45 @@ import { NextResponse } from "next/server";
 import { createClient } from "@supabase/supabase-js";
 import { Resend } from "resend";
 
-const supabase = createClient(
-  process.env.SUPABASE_URL!,
-  process.env.SUPABASE_SERVICE_ROLE_KEY!
-);
+function getSupabase() {
+  const supabaseUrl = process.env.SUPABASE_URL ?? process.env.NEXT_PUBLIC_SUPABASE_URL;
+  const serviceRoleKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
 
-const resend = new Resend(process.env.RESEND_API_KEY);
+  if (!supabaseUrl || !serviceRoleKey) {
+    throw new Error("Supabase registration environment is not configured");
+  }
+
+  return createClient(supabaseUrl, serviceRoleKey);
+}
+
+function getResend() {
+  if (!process.env.RESEND_API_KEY) {
+    throw new Error("RESEND_API_KEY is not configured");
+  }
+
+  return new Resend(process.env.RESEND_API_KEY);
+}
+
+function mergeTags(currentTags: string[] | null | undefined, incomingTags: string[]) {
+  const tags: string[] = [];
+  const seen = new Set<string>();
+
+  for (const tag of [...(currentTags ?? []), ...incomingTags]) {
+    const trimmed = tag.trim();
+    const key = trimmed.toLowerCase();
+    if (!trimmed || seen.has(key)) continue;
+    tags.push(trimmed);
+    seen.add(key);
+  }
+
+  return tags;
+}
 
 export async function POST(req: Request) {
   try {
     const { name, email, phone } = await req.json();
+    const supabase = getSupabase();
+    const resend = getResend();
 
     if (!name || !email) {
       return NextResponse.json(
@@ -27,19 +56,25 @@ export async function POST(req: Request) {
 
     // Check if contact already exists
     const normalizedEmail = email.trim().toLowerCase();
-    const { data: existing } = await supabase
+    const { data: existingRows, error: lookupError } = await supabase
       .from("contacts")
       .select("id, tags")
       .eq("email", normalizedEmail)
-      .limit(1)
-      .single();
+      .order("created_at", { ascending: false })
+      .order("id", { ascending: true })
+      .limit(1);
+    const existing = existingRows?.[0];
+
+    if (lookupError) {
+      console.error("Supabase contact lookup error:", lookupError);
+    }
 
     if (existing) {
       // Update existing contact — merge tags
-      const currentTags = (existing.tags as string[]) ?? [];
-      const newTags = Array.from(
-        new Set([...currentTags, "Portal Membership", "Interested"])
-      );
+      const newTags = mergeTags(existing.tags as string[] | null, [
+        "Portal Membership",
+        "Interested",
+      ]);
       await supabase
         .from("contacts")
         .update({
