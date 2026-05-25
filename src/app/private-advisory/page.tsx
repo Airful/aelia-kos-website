@@ -153,7 +153,7 @@ export default function PrivateAdvisory() {
               There are no exploration calls for approval.
             </p>
             <p className="font-display text-lg text-[#8B6F5C] mb-8">
-              There is no "fit assessment" as qualification.
+              There is no &ldquo;fit assessment&rdquo; as qualification.
             </p>
           </AnimatedSection>
 
@@ -284,7 +284,7 @@ export default function PrivateAdvisory() {
               <AnimatedSection key={index} delay={index * 0.1}>
                 <div className="p-8 bg-[#E8E4DE]">
                   <p className="font-display text-lg text-[#2C2825] italic leading-relaxed mb-6">
-                    "{testimonial.quote}"
+                    &ldquo;{testimonial.quote}&rdquo;
                   </p>
                   <div className="w-12 h-px bg-[#C9A962] mb-4" />
                   <p className="text-sm text-[#8B6F5C]">

@@ -82,6 +82,7 @@ export default function PortalPage() {
     if (typeof window !== "undefined") {
       const params = new URLSearchParams(window.location.search);
       if (params.get("success") === "true") {
+        // eslint-disable-next-line react-hooks/set-state-in-effect
         setShowSuccess(true);
       }
     }
