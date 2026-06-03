@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import { motion } from "framer-motion";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
@@ -58,6 +59,40 @@ const benefits = [
 ];
 
 export default function UniVerseClub() {
+  const [form, setForm] = useState({ name: "", email: "", message: "" });
+  const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
+  const [errorMsg, setErrorMsg] = useState("");
+
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    if (!form.name.trim() || !form.email.trim()) return;
+    setStatus("submitting");
+    setErrorMsg("");
+    try {
+      const res = await fetch("/api/register-interest", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name: form.name,
+          email: form.email,
+          message: form.message,
+          type: "universe_club",
+        }),
+      });
+      const data = await res.json();
+      if (data.success) {
+        setStatus("success");
+        setForm({ name: "", email: "", message: "" });
+      } else {
+        setStatus("error");
+        setErrorMsg(data.error ?? "Something went wrong. Please try again.");
+      }
+    } catch {
+      setStatus("error");
+      setErrorMsg("Something went wrong. Please try again.");
+    }
+  }
+
   return (
     <main className="min-h-screen bg-[#FAF8F5]">
       <Navigation />
@@ -324,43 +359,89 @@ export default function UniVerseClub() {
           </AnimatedSection>
 
           <AnimatedSection delay={0.2}>
-            <form className="max-w-xl mx-auto text-left space-y-6">
-              <div>
-                <label className="block text-xs tracking-[0.2em] uppercase text-[#8B6F5C] mb-2">
-                  Name
-                </label>
-                <input
-                  type="text"
-                  className="w-full px-4 py-3 bg-[#FAF8F5] border border-[#D4CFC7] font-display text-[#2C2825] focus:outline-none focus:border-[#C9A962]"
-                />
+            {status === "success" ? (
+              <div className="max-w-xl mx-auto text-center py-12">
+                <div className="text-3xl text-[#C9A962] mb-6">✦</div>
+                <p className="font-display text-2xl text-[#2C2825] mb-4">
+                  Thank you.
+                </p>
+                <p className="font-display text-base text-[#5d544a] leading-relaxed">
+                  Your message has reached Aelia. If alignment is clear,
+                  a conversation will follow.
+                </p>
               </div>
+            ) : (
+              <form
+                onSubmit={handleSubmit}
+                className="max-w-xl mx-auto text-left space-y-6"
+              >
+                <div>
+                  <label
+                    htmlFor="uc-name"
+                    className="block text-xs tracking-[0.2em] uppercase text-[#8B6F5C] mb-2"
+                  >
+                    Name
+                  </label>
+                  <input
+                    id="uc-name"
+                    type="text"
+                    required
+                    value={form.name}
+                    onChange={(e) => setForm((f) => ({ ...f, name: e.target.value }))}
+                    className="w-full px-4 py-3 bg-[#FAF8F5] border border-[#D4CFC7] font-display text-[#2C2825] focus:outline-none focus:border-[#C9A962]"
+                  />
+                </div>
 
-              <div>
-                <label className="block text-xs tracking-[0.2em] uppercase text-[#8B6F5C] mb-2">
-                  Email
-                </label>
-                <input
-                  type="email"
-                  className="w-full px-4 py-3 bg-[#FAF8F5] border border-[#D4CFC7] font-display text-[#2C2825] focus:outline-none focus:border-[#C9A962]"
-                />
-              </div>
+                <div>
+                  <label
+                    htmlFor="uc-email"
+                    className="block text-xs tracking-[0.2em] uppercase text-[#8B6F5C] mb-2"
+                  >
+                    Email
+                  </label>
+                  <input
+                    id="uc-email"
+                    type="email"
+                    required
+                    value={form.email}
+                    onChange={(e) => setForm((f) => ({ ...f, email: e.target.value }))}
+                    className="w-full px-4 py-3 bg-[#FAF8F5] border border-[#D4CFC7] font-display text-[#2C2825] focus:outline-none focus:border-[#C9A962]"
+                  />
+                </div>
 
-              <div>
-                <label className="block text-xs tracking-[0.2em] uppercase text-[#8B6F5C] mb-2">
-                  What brings you to UniVerse Club?
-                </label>
-                <textarea
-                  rows={4}
-                  className="w-full px-4 py-3 bg-[#FAF8F5] border border-[#D4CFC7] font-display text-[#2C2825] focus:outline-none focus:border-[#C9A962] resize-none"
-                />
-              </div>
+                <div>
+                  <label
+                    htmlFor="uc-message"
+                    className="block text-xs tracking-[0.2em] uppercase text-[#8B6F5C] mb-2"
+                  >
+                    What brings you to UniVerse Club?
+                  </label>
+                  <textarea
+                    id="uc-message"
+                    rows={4}
+                    value={form.message}
+                    onChange={(e) => setForm((f) => ({ ...f, message: e.target.value }))}
+                    className="w-full px-4 py-3 bg-[#FAF8F5] border border-[#D4CFC7] font-display text-[#2C2825] focus:outline-none focus:border-[#C9A962] resize-none"
+                  />
+                </div>
 
-              <div className="text-center pt-4">
-                <button type="submit" className="btn btn-primary">
-                  Submit
-                </button>
-              </div>
-            </form>
+                {status === "error" && (
+                  <p className="text-sm text-red-700 text-center">
+                    {errorMsg}
+                  </p>
+                )}
+
+                <div className="text-center pt-4">
+                  <button
+                    type="submit"
+                    disabled={status === "submitting"}
+                    className="btn btn-primary disabled:opacity-60 disabled:cursor-not-allowed"
+                  >
+                    {status === "submitting" ? "Submitting..." : "Submit"}
+                  </button>
+                </div>
+              </form>
+            )}
           </AnimatedSection>
         </div>
       </section>
