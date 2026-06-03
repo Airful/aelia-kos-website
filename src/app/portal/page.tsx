@@ -8,34 +8,54 @@ import AnimatedSection from "@/components/AnimatedSection";
 import { trackEnterPortal } from "@/lib/analytics";
 
 const traits = [
-  <>You check the astrology <em>and</em> the analytics</>,
-  "You feel the collective shifting before the news does",
-  "You navigate more intense waves than most — and you're learning to call that a gift",
-  "You are building a business with soul, not just a business with revenue",
-  "You have been looking for a room of people who understand this path",
+  <>
+    <em>An acceleration across several dimensions</em> of your life and business
+  </>,
+  <>
+    <em>Conversations that span business and mysticism</em>, where nothing is too taboo to address with people who truly understand
+  </>,
+  <>
+    <em>Wisdom shared at the exact moment of transmission</em>, dissolving blocks inside your psyche in days rather than years
+  </>,
+  <>
+    <em>An AI that knows you</em> — not generically, but with genuine depth — and surfaces people and opportunities who are timely for where you actually are
+  </>,
 ];
 
 const offerings = [
   {
     num: "I",
-    title: "The Monthly Transmission",
-    desc: "Each month, when the energy has gathered, Aelia shares a live orientation of what is moving in the collective field. Not a coaching call. Not a masterclass. A transmission.",
+    title: "The Ecosystem",
+    desc: "My best people around the world. Peer-level. Global. Equal voice. No hierarchy of expertise — only the quality of what each person carries and is willing to bring. Belonging is based on genuine resonance.",
   },
   {
     num: "II",
-    title: "Universe Club Access",
-    desc: "Full access to the Universe Club AI synchronicity engine — the platform that connects you to your essence-aligned community. Not people in your industry. People in your frequency.",
+    title: "The Community Calls",
+    desc: "Online gatherings held monthly. People being present together, sharing the edges of their work to find clarity through the intelligence of our collective.",
   },
   {
     num: "III",
-    title: "A Living Community",
-    desc: "A small, curated gathering of founders, creators, and investors walking this same unusual path. Where spirituality and business are not opposites.",
+    title: "The AI",
+    desc: "A digital partner that serves your evolution. It knows your work, your destiny path and your timing and suggests who to meet at the right time and for the right reasons.",
   },
   {
     num: "IV",
-    title: "The Field Itself",
-    desc: "Being in right relationship with what is moving in the world. What you enter into now, you build for the next cycle.",
+    title: "The Transmissions",
+    desc: "Live transmissions of truth, meant to help you approach the energetic layer of your reality and unlock codes that have been dormant inside of you. Recorded so you can access them anytime.",
   },
+];
+
+const commitments = [
+  { value: "~2h", label: "Minimum / month" },
+  { value: "∞", label: "If you go deep" },
+  { value: "1×", label: "Live session / month" },
+];
+
+const trialTerms = [
+  "Your first month is completely free — full access, no limitations.",
+  <>Billing begins on day 31 at <strong className="font-medium text-[#1a1510]">111 CHF / month</strong>, billed monthly.</>,
+  "Cancel anytime before day 31 and you will not be charged.",
+  "No hidden fees. No annual lock-in. You stay because it's valuable.",
 ];
 
 // Stars component for background particles
@@ -186,7 +206,7 @@ export default function PortalPage() {
           {/* CTA */}
           <div className="relative z-[2] mt-[26px] animate-[fadeUp_1s_ease_both_0.9s]">
             <Link
-              href="/whats-inside"
+              href="/register"
               onClick={() => trackEnterPortal("hero")}
               className="btn-ghost border-[rgba(224,224,224,0.55)] !text-[#E0E0E0] !opacity-100 hover:!border-[#A9540F]"
             >
@@ -208,7 +228,7 @@ export default function PortalPage() {
         {/* ── FOR YOU ── */}
         <section className="relative z-[1] py-[92px] px-6 md:px-12 max-w-[800px] mx-auto">
           <AnimatedSection>
-            <span className="eyebrow">This is for you if</span>
+            <span className="eyebrow">This is for you</span>
           </AnimatedSection>
 
           <AnimatedSection delay={0.1}>
@@ -216,46 +236,167 @@ export default function PortalPage() {
               className="text-[clamp(36px,5vw,52px)] font-normal leading-[1.08] text-[#1a1510] mb-7 tracking-[-0.01em]"
               style={{ fontFamily: "var(--font-serif)" }}
             >
-              You build from a
+              You move at
               <br />
-              <em className="italic text-[#A9540F]">different place</em>
+              <em className="italic text-[#A9540F]">the forefront</em>
             </h2>
           </AnimatedSection>
 
           <AnimatedSection delay={0.2}>
-            <p className="text-[15px] leading-[1.85] font-light text-[#5d544a] max-w-[540px]">
-              You sense things before they happen. You check the astrology{" "}
-              <em
-                className="italic text-[#1a1510]"
+            <div className="text-[15px] leading-[1.85] text-[#1a1510] max-w-[600px] space-y-4 [&_.ni]:text-[#1a1510] [&_.ni]:font-medium">
+              <p>
+                You sense what others have not yet named. You cross thresholds
+                that most people do not know exist.
+              </p>
+              <p>
+                And somewhere along the way — in the rooms, the masterminds, the
+                conferences, the communities — you noticed something. The
+                conversation kept stopping short of where you actually are.
+              </p>
+              <p>
+                Not because the people were not intelligent. Because{" "}
+                <span className="ni">the field was not alive enough</span> to
+                hold what you carry. The surface was impressive. The depth was
+                absent.
+              </p>
+              <p>
+                Rooms that required you to shrink or to perform. Rooms that
+                celebrated your credentials while missing entirely who you are.
+              </p>
+              <p>You learned to leave early.</p>
+              <p>
+                What you have been looking for — without always having the words
+                for it — is a field where the conversation begins where those
+                rooms end.{" "}
+                <span className="ni">
+                  A space where you don&apos;t need to translate yourself. Where
+                  your full range — the mystical and the precise, the strategic
+                  and the strange, the ancient knowing and the radically new —
+                  is not only welcome but expected.
+                </span>
+              </p>
+              <p>That field exists.</p>
+            </div>
+          </AnimatedSection>
+
+          <AnimatedSection delay={0.3}>
+            <div className="mt-13 p-7 md:p-9 border-l-2 border-[#A9540F] bg-[rgba(169,84,15,0.06)]">
+              <p
+                className="text-[clamp(17px,2.3vw,22px)] font-light italic leading-[1.55] text-[#1a1510]"
                 style={{ fontFamily: "var(--font-serif)" }}
               >
-                and
-              </em>{" "}
-              the analytics. You are building something that carries real meaning
-              — and you need a room where that is not strange.
-            </p>
+                &ldquo;I felt a precise call to be in that space with you.&rdquo;
+              </p>
+              <cite className="block mt-3 not-italic text-[10px] tracking-[0.2em] uppercase text-[#A9540F] opacity-70">
+                — A.F.
+              </cite>
+            </div>
+          </AnimatedSection>
+        </section>
+
+        <div className="section-divider" />
+
+        {/* ── THE ESSENCE ── */}
+        <section className="relative z-[1] py-[92px] px-6 md:px-12 max-w-[800px] mx-auto text-center">
+          <AnimatedSection>
+            <span className="eyebrow">The essence of what this is</span>
+          </AnimatedSection>
+
+          <AnimatedSection delay={0.1}>
+            <h2
+              className="text-[clamp(36px,5vw,52px)] font-normal leading-[1.08] text-[#1a1510] mb-9 tracking-[-0.01em]"
+              style={{ fontFamily: "var(--font-serif)" }}
+            >
+              Not a platform. Not a product.
+              <br />
+              <em className="italic text-[#A9540F]">A field of Synchronicity.</em>
+            </h2>
+          </AnimatedSection>
+
+          <AnimatedSection delay={0.2}>
+            <div className="text-[15px] leading-[1.85] text-[#1a1510] max-w-[560px] mx-auto text-left space-y-4">
+              <p>
+                Universe Portal is not a platform. It is not a community product.
+                It is not a course, a mastermind, or a method.
+              </p>
+              <p>
+                It is a place where you see yourself, your life, your purpose —
+                more clearly than you could outside it. Where you act differently
+                because you see differently. Where your life transforms because
+                your actions have.
+              </p>
+            </div>
+          </AnimatedSection>
+
+          <AnimatedSection delay={0.3}>
+            <div className="mt-13 p-7 md:p-9 border-l-2 border-[#A9540F] bg-[rgba(169,84,15,0.06)] text-left max-w-[560px] mx-auto">
+              <p
+                className="text-[clamp(17px,2.3vw,22px)] font-light italic leading-[1.55] text-[#1a1510]"
+                style={{ fontFamily: "var(--font-serif)" }}
+              >
+                &ldquo;Everything moved to make it possible to be there with
+                you.&rdquo;
+              </p>
+              <cite className="block mt-3 not-italic text-[10px] tracking-[0.2em] uppercase text-[#A9540F] opacity-70">
+                — A.F.
+              </cite>
+            </div>
+          </AnimatedSection>
+        </section>
+
+        <div className="section-divider" />
+
+        {/* ── WHAT BECOMES POSSIBLE ── */}
+        <section className="relative z-[1] py-[92px] px-6 md:px-12 max-w-[800px] mx-auto">
+          <AnimatedSection>
+            <span className="eyebrow">What becomes possible</span>
+          </AnimatedSection>
+
+          <AnimatedSection delay={0.1}>
+            <h2
+              className="text-[clamp(36px,5vw,52px)] font-normal leading-[1.08] text-[#1a1510] mb-7 tracking-[-0.01em]"
+              style={{ fontFamily: "var(--font-serif)" }}
+            >
+              What you can
+              <br />
+              <em className="italic text-[#A9540F]">expect</em>
+            </h2>
           </AnimatedSection>
 
           <div className="flex flex-col mt-9 max-w-[600px]">
             {traits.map((trait, i) => (
-              <AnimatedSection key={i} delay={0.3 + i * 0.08}>
-                <div className="flex items-start gap-[18px] py-4 border-b border-[rgba(232,228,223,0.18)]">
+              <AnimatedSection key={i} delay={0.2 + i * 0.08}>
+                <div className="flex items-start gap-[18px] py-4 border-b border-[rgba(26,21,16,0.08)]">
                   <div className="w-1 h-1 rounded-full bg-[#A9540F] shrink-0 mt-[10px] opacity-70" />
-                  <div className="text-sm leading-[1.8] font-light text-[#5d544a] [&>em]:italic [&>em]:text-[#1a1510] [&>em]:text-base" style={{ fontFamily: "var(--font-sans)" }}>
+                  <div className="text-[15px] leading-[1.8] text-[#1a1510] [&>em]:italic [&>em]:text-[#1a1510] [&>em]:font-medium [&>em]:not-italic" style={{ fontFamily: "var(--font-sans)" }}>
                     {trait}
                   </div>
                 </div>
               </AnimatedSection>
             ))}
           </div>
+
+          <AnimatedSection delay={0.6}>
+            <div className="mt-13 p-7 md:p-9 border-l-2 border-[#A9540F] bg-[rgba(169,84,15,0.06)]">
+              <p
+                className="text-[clamp(17px,2.3vw,22px)] font-light italic leading-[1.55] text-[#1a1510]"
+                style={{ fontFamily: "var(--font-serif)" }}
+              >
+                &ldquo;This has become my life mission now.&rdquo;
+              </p>
+              <cite className="block mt-3 not-italic text-[10px] tracking-[0.2em] uppercase text-[#A9540F] opacity-70">
+                — N.G.
+              </cite>
+            </div>
+          </AnimatedSection>
         </section>
 
         <div className="section-divider" />
 
-        {/* ── WHAT YOU RECEIVE ── */}
+        {/* ── THE FOUR ELEMENTS ── */}
         <section className="relative z-[1] py-[92px] px-6 md:px-12 max-w-[800px] mx-auto text-center">
           <AnimatedSection>
-            <span className="eyebrow">What you receive</span>
+            <span className="eyebrow">What precisely you are getting into</span>
           </AnimatedSection>
 
           <AnimatedSection delay={0.1}>
@@ -263,9 +404,9 @@ export default function PortalPage() {
               className="text-[clamp(36px,5vw,52px)] font-normal leading-[1.08] text-[#1a1510] mb-7 tracking-[-0.01em]"
               style={{ fontFamily: "var(--font-serif)" }}
             >
-              Everything you need.
+              The four
               <br />
-              <em className="italic text-[#A9540F]">Nothing you don&apos;t.</em>
+              <em className="italic text-[#A9540F]">elements</em>
             </h2>
           </AnimatedSection>
 
@@ -289,31 +430,97 @@ export default function PortalPage() {
                   >
                     {o.title}
                   </div>
-                  <p className="text-[13.5px] leading-[1.85] text-[#5d544a] font-light">
+                  <p className="text-[13.5px] leading-[1.85] text-[#1a1510]">
                     {o.desc}
                   </p>
                 </div>
               ))}
             </div>
           </AnimatedSection>
+        </section>
 
-          {/* Pull quote */}
-          <AnimatedSection delay={0.3}>
-            <div className="mt-15 p-8 md:p-10 md:px-11 border-l-2 border-[#A9540F] bg-[rgba(169,84,15,0.06)] text-left">
-              <p
-                className="text-[clamp(19px,2.6vw,26px)] font-light italic leading-[1.55] text-[#1a1510]"
+        <div className="section-divider" />
+
+        {/* ── TIME COMMITMENT — sky image strip ── */}
+        <section className="relative z-[1] overflow-hidden">
+          <div className="relative py-[80px] px-6 md:px-12 text-center">
+            <div className="absolute inset-0 z-0">
+              <Image
+                src="/sky.jpg"
+                alt=""
+                fill
+                className="object-cover object-center"
+              />
+              <div
+                className="absolute inset-0"
+                style={{
+                  background: `
+                    radial-gradient(ellipse 60% 50% at 50% 30%, rgba(169,84,15,0.18) 0%, transparent 65%),
+                    radial-gradient(ellipse 80% 60% at 20% 80%, rgba(169,84,15,0.10) 0%, transparent 55%)
+                  `,
+                }}
+              />
+            </div>
+
+            <AnimatedSection>
+              <h2
+                className="relative z-[1] text-[clamp(26px,3.5vw,36px)] font-light text-[#e8e4df] mb-14 italic"
                 style={{ fontFamily: "var(--font-serif)" }}
               >
-                &ldquo;This is not a course.
-                <br />
-                Not a coaching program.
-                <br />
-                It is a <em>portal</em> — a place you belong to, while you
-                build.&rdquo;
+                Your honest time commitment
+              </h2>
+            </AnimatedSection>
+
+            <AnimatedSection delay={0.15}>
+              <div className="relative z-[1] flex flex-col md:flex-row items-center justify-center gap-14 md:gap-24">
+                {commitments.map((c) => (
+                  <div key={c.label} className="flex flex-col items-center gap-3">
+                    <span
+                      className="text-[clamp(46px,8vw,72px)] font-light text-[#A9540F] leading-none"
+                      style={{ fontFamily: "var(--font-serif)" }}
+                    >
+                      {c.value}
+                    </span>
+                    <span className="text-[10px] tracking-[0.22em] uppercase text-[rgba(232,228,223,0.75)]">
+                      {c.label}
+                    </span>
+                  </div>
+                ))}
+              </div>
+            </AnimatedSection>
+          </div>
+        </section>
+
+        {/* ── WHAT IS REQUIRED ── */}
+        <section className="relative z-[1] py-[92px] px-6 md:px-12 max-w-[800px] mx-auto">
+          <AnimatedSection>
+            <span className="eyebrow">What is required of you</span>
+          </AnimatedSection>
+
+          <AnimatedSection delay={0.1}>
+            <h2
+              className="text-[clamp(36px,5vw,52px)] font-normal leading-[1.08] text-[#1a1510] mb-7 tracking-[-0.01em]"
+              style={{ fontFamily: "var(--font-serif)" }}
+            >
+              Presence &amp; Intention.
+              <br />
+              <em className="italic text-[#A9540F]">Not time.</em>
+            </h2>
+          </AnimatedSection>
+
+          <AnimatedSection delay={0.2}>
+            <div className="text-[15px] leading-[1.85] text-[#1a1510] max-w-[600px] space-y-4">
+              <p>
+                What is required is your presence and clarity of intention. Not
+                performance. Not credentials. Not agreement.
               </p>
-              <cite className="block mt-4 not-italic text-[10px] tracking-[0.2em] uppercase text-[#A9540F] opacity-70">
-                — Aelia
-              </cite>
+              <p>
+                Only this: that you arrive as you actually are, and bring what
+                you genuinely carry.
+              </p>
+              <p>
+                If that is available to you — the Portal will meet you there.
+              </p>
             </div>
           </AnimatedSection>
         </section>
@@ -347,7 +554,7 @@ export default function PortalPage() {
               >
                 Aelia <em className="italic text-[#A9540F]">Kos</em>
               </div>
-              <div className="text-[15px] leading-[1.85] font-light text-[#5d544a] max-w-[540px] space-y-3.5">
+              <div className="text-[15px] leading-[1.85] text-[#1a1510] max-w-[540px] space-y-3.5">
                 <p>
                   Hi, I&apos;m Aelia — architect, experience designer, business
                   mentor and founder of Universe Club.
@@ -369,21 +576,10 @@ export default function PortalPage() {
                   conditions under which people, capital, timing, and decisions
                   reorganize naturally.
                 </p>
-                <p>
-                  Universe Club is that field made real — an AI synchronicity
-                  engine for essence-aligned connections through people, places,
-                  and opportunities. Built for high-caliber ecosystems that scale
-                  without losing intimacy.
-                </p>
-                <p>
-                  Universe Portal is the gateway into it. The living membership I
-                  wish had existed when I began this path — and the most direct
-                  way to enter the field.
-                </p>
               </div>
               <div className="mt-8">
                 <Link
-                  href="/whats-inside"
+                  href="/register"
                   onClick={() => trackEnterPortal("pricing")}
                   className="btn-ghost relative overflow-hidden !opacity-100 !text-[#E0E0E0] !border-[rgba(224,224,224,0.45)] hover:!border-[#A9540F]"
                 >
@@ -395,6 +591,107 @@ export default function PortalPage() {
               </div>
             </AnimatedSection>
           </div>
+        </section>
+
+        <div className="section-divider" />
+
+        {/* ── WHY THIS EXISTS ── */}
+        <section className="relative z-[1] py-[92px] px-6 md:px-12 max-w-[800px] mx-auto">
+          <AnimatedSection>
+            <span className="eyebrow">Why this exists</span>
+          </AnimatedSection>
+
+          <AnimatedSection delay={0.1}>
+            <h2
+              className="text-[clamp(36px,5vw,52px)] font-normal leading-[1.08] text-[#1a1510] mb-7 tracking-[-0.01em]"
+              style={{ fontFamily: "var(--font-serif)" }}
+            >
+              Experience of
+              <br />
+              <em className="italic text-[#A9540F]">a different way</em>
+            </h2>
+          </AnimatedSection>
+
+          <AnimatedSection delay={0.2}>
+            <div className="text-[15px] leading-[1.85] text-[#1a1510] max-w-[600px] space-y-4 [&_.ni]:font-medium">
+              <p>
+                Universe Portal was built because the old ways of gathering
+                people have reached their limit.
+              </p>
+              <p>
+                The extractive model — where communities harvest attention and
+                return noise — is visible now to anyone with eyes to see it. The
+                performance model — where belonging requires agreement and
+                credentials circulate in place of depth — is exhausting the very
+                people who are here to build something new.
+              </p>
+              <p>
+                This is a demonstration of a different way. The people inside are
+                building businesses that are more like missions. They know that
+                new ways are necessary. They can sense the old and move past it.
+              </p>
+              <p>
+                They lean into what is genuinely new — not as a trend, but a
+                reality in the making.{" "}
+                <span className="ni">
+                  They are drawn together by synchronicity, to remember what
+                  happens when we meet with genuine intention and build with
+                  care.
+                </span>
+              </p>
+            </div>
+          </AnimatedSection>
+
+          <AnimatedSection delay={0.3}>
+            <div className="mt-13 p-7 md:p-9 border-l-2 border-[#A9540F] bg-[rgba(169,84,15,0.06)]">
+              <p
+                className="text-[clamp(17px,2.3vw,22px)] font-light italic leading-[1.55] text-[#1a1510]"
+                style={{ fontFamily: "var(--font-serif)" }}
+              >
+                &ldquo;Inspiring. Truly inspiring.&rdquo;
+              </p>
+              <cite className="block mt-3 not-italic text-[10px] tracking-[0.2em] uppercase text-[#A9540F] opacity-70">
+                — G.B.
+              </cite>
+            </div>
+          </AnimatedSection>
+        </section>
+
+        <div className="section-divider" />
+
+        {/* ── FREE TRIAL ── */}
+        <section className="relative z-[1] py-[80px] px-6 md:px-12 max-w-[720px] mx-auto text-center">
+          <AnimatedSection>
+            <h2
+              className="text-[clamp(32px,5vw,48px)] font-light text-[#1a1510] mb-4"
+              style={{ fontFamily: "var(--font-serif)" }}
+            >
+              Your first month is{" "}
+              <em className="italic text-[#A9540F]">free</em>
+            </h2>
+          </AnimatedSection>
+
+          <AnimatedSection delay={0.1}>
+            <p className="text-[15px] leading-[1.9] text-[#1a1510] opacity-80 mb-10">
+              We&apos;d rather you experience it than wonder about it. So your
+              first 30 days cost nothing.
+            </p>
+          </AnimatedSection>
+
+          <AnimatedSection delay={0.2}>
+            <div className="max-w-[520px] mx-auto text-left space-y-4">
+              {trialTerms.map((term, i) => (
+                <div key={i} className="flex items-start gap-4">
+                  <span className="text-[#A9540F] text-lg mt-0.5 shrink-0">
+                    ✓
+                  </span>
+                  <span className="text-[14px] leading-[1.75] text-[#1a1510]">
+                    {term}
+                  </span>
+                </div>
+              ))}
+            </div>
+          </AnimatedSection>
         </section>
 
         {/* ── PRICING ── */}
@@ -458,7 +755,7 @@ export default function PortalPage() {
 
           <AnimatedSection delay={0.4}>
             <Link
-              href="/whats-inside"
+              href="/register"
               onClick={() => trackEnterPortal("cta")}
               className="btn-enter relative z-[1] overflow-hidden !text-[#E0E0E0] hover:!text-white"
             >
