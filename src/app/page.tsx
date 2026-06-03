@@ -210,7 +210,7 @@ export default function Home() {
             >
               Private advisory for leaders navigating
               <br />
-              <em className="italic text-[rgba(242,237,232,0.45)]">structural repositioning</em>
+              <em className="italic text-[rgba(242,237,232,0.65)]">structural repositioning</em>
             </h2>
           </AnimatedSection>
 
@@ -297,10 +297,10 @@ export default function Home() {
           >
             Guide. Founder.
             <br />
-            <em className="text-[rgba(242,237,232,0.45)]">Alchemist.</em>
+            <em className="text-[rgba(242,237,232,0.65)]">Alchemist.</em>
           </h2>
           <div
-            className="text-lg leading-[1.9] text-[rgba(242,237,232,0.5)] mb-10 space-y-3.5"
+            className="text-lg leading-[1.9] text-[#b5aca2] mb-10 space-y-3.5"
             style={{ fontFamily: "var(--font-serif)" }}
           >
             <p>
@@ -330,7 +330,7 @@ export default function Home() {
           </div>
           <a
             href="mailto:aelia@aeliakos.com"
-            className="text-[9px] tracking-[4px] uppercase text-[#A9540F] no-underline border-b border-[rgba(169,84,15,0.35)] pb-[3px] self-start hover:border-[#A9540F] transition-colors"
+            className="text-[10px] tracking-[4px] uppercase text-[#f2ede8] no-underline border-b border-[rgba(169,84,15,0.55)] pb-[3px] self-start hover:border-[#A9540F] transition-colors"
           >
             Begin a conversation
           </a>

@@ -50,7 +50,7 @@ export default function BookingClient() {
         </Link>
         <Link
           href="/portal"
-          className="text-[11px] tracking-[0.2em] uppercase text-[#1a1510] opacity-45 no-underline hover:opacity-100 hover:text-[#A9540F] transition-all"
+          className="text-[11px] tracking-[0.2em] uppercase text-[#1a1510] opacity-70 no-underline hover:opacity-100 hover:text-[#A9540F] transition-all"
         >
           Enter the Portal
         </Link>

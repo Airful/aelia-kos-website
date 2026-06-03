@@ -47,7 +47,7 @@ export default function Footer() {
         </li>
       </ul>
 
-      <p className="text-[10px] text-[#5d544a] opacity-50 tracking-[1px]">
+      <p className="text-[10px] text-[#5d544a] opacity-80 tracking-[1px]">
         &copy; {new Date().getFullYear()} Aelia Kos &middot; aeliakos.com
       </p>
     </footer>

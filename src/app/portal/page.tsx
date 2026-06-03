@@ -136,7 +136,7 @@ export default function PortalPage() {
           </Link>
           <Link
             href="/portal"
-            className="text-[11px] tracking-[0.2em] uppercase text-[#1a1510] opacity-45 no-underline hover:opacity-100 hover:text-[#A9540F] transition-all"
+            className="text-[11px] tracking-[0.2em] uppercase text-[#1a1510] opacity-70 no-underline hover:opacity-100 hover:text-[#A9540F] transition-all"
           >
             Enter the Portal
           </Link>
@@ -287,7 +287,7 @@ export default function PortalPage() {
               >
                 &ldquo;I felt a precise call to be in that space with you.&rdquo;
               </p>
-              <cite className="block mt-3 not-italic text-[10px] tracking-[0.2em] uppercase text-[#A9540F] opacity-70">
+              <cite className="block mt-3 not-italic text-[10px] tracking-[0.2em] uppercase text-[#A9540F]">
                 — A.F.
               </cite>
             </div>
@@ -337,7 +337,7 @@ export default function PortalPage() {
                 &ldquo;Everything moved to make it possible to be there with
                 you.&rdquo;
               </p>
-              <cite className="block mt-3 not-italic text-[10px] tracking-[0.2em] uppercase text-[#A9540F] opacity-70">
+              <cite className="block mt-3 not-italic text-[10px] tracking-[0.2em] uppercase text-[#A9540F]">
                 — A.F.
               </cite>
             </div>
@@ -384,7 +384,7 @@ export default function PortalPage() {
               >
                 &ldquo;This has become my life mission now.&rdquo;
               </p>
-              <cite className="block mt-3 not-italic text-[10px] tracking-[0.2em] uppercase text-[#A9540F] opacity-70">
+              <cite className="block mt-3 not-italic text-[10px] tracking-[0.2em] uppercase text-[#A9540F]">
                 — N.G.
               </cite>
             </div>
@@ -650,7 +650,7 @@ export default function PortalPage() {
               >
                 &ldquo;Inspiring. Truly inspiring.&rdquo;
               </p>
-              <cite className="block mt-3 not-italic text-[10px] tracking-[0.2em] uppercase text-[#A9540F] opacity-70">
+              <cite className="block mt-3 not-italic text-[10px] tracking-[0.2em] uppercase text-[#A9540F]">
                 — G.B.
               </cite>
             </div>
