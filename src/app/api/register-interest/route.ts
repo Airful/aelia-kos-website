@@ -80,7 +80,7 @@ function escapeHtml(s: string): string {
 export async function POST(req: Request) {
   try {
     const body = await req.json();
-    const { name, email, phone, message } = body;
+    const { name, email, phone, message, social } = body;
     const type: SubmissionType =
       body.type && body.type in SUBMISSION_CONFIG ? body.type : "portal";
     const config = SUBMISSION_CONFIG[type];
@@ -100,11 +100,23 @@ export async function POST(req: Request) {
     const first_name = parts[0];
     const last_name = parts.slice(1).join(" ") || null;
 
+    // Route social link: LinkedIn URLs → linkedin_url column; anything else
+    // gets appended to notes so Aelia can see it on the contact record.
+    const socialTrimmed = social?.trim() || null;
+    const isLinkedIn = socialTrimmed
+      ? /linkedin\.com/i.test(socialTrimmed)
+      : false;
+    const linkedinUrl = isLinkedIn ? socialTrimmed : null;
+    const socialNote =
+      socialTrimmed && !isLinkedIn
+        ? `Social/link: ${socialTrimmed}`
+        : null;
+
     // Check if contact already exists
     const normalizedEmail = email.trim().toLowerCase();
     const { data: existingRows, error: lookupError } = await supabase
       .from("contacts")
-      .select("id, tags, notes")
+      .select("id, tags, notes, linkedin_url")
       .eq("email", normalizedEmail)
       .order("created_at", { ascending: false })
       .order("id", { ascending: true })
@@ -117,9 +129,13 @@ export async function POST(req: Request) {
 
     // Build new note entry (prepended to existing notes with date + type)
     const today = new Date().toISOString().split("T")[0];
-    const noteEntry = message?.trim()
-      ? `[${today} · ${config.subjectPrefix}] ${message.trim()}`
-      : null;
+    const noteParts: string[] = [];
+    if (message?.trim()) noteParts.push(message.trim());
+    if (socialNote) noteParts.push(socialNote);
+    const noteEntry =
+      noteParts.length > 0
+        ? `[${today} · ${config.subjectPrefix}] ${noteParts.join(" · ")}`
+        : null;
 
     if (existing) {
       const newTags = mergeTags(existing.tags as string[] | null, config.tags);
@@ -137,6 +153,10 @@ export async function POST(req: Request) {
           last_name,
           phone: phone?.trim() || null,
           tags: newTags,
+          // Only overwrite linkedin_url if we have a new one AND the field is empty
+          ...(linkedinUrl && !existing.linkedin_url
+            ? { linkedin_url: linkedinUrl }
+            : {}),
           ...(noteEntry ? { notes: updatedNotes } : {}),
         })
         .eq("id", existing.id);
@@ -146,6 +166,7 @@ export async function POST(req: Request) {
         last_name,
         email: normalizedEmail,
         phone: phone?.trim() || null,
+        linkedin_url: linkedinUrl,
         type: "lead",
         status: "active",
         source: "website",
@@ -184,6 +205,16 @@ export async function POST(req: Request) {
             <tr>
               <td style="padding: 10px 0; border-bottom: 1px solid #e8e4df; color: #7a7068;">Phone</td>
               <td style="padding: 10px 0; border-bottom: 1px solid #e8e4df;">${escapeHtml(phone)}</td>
+            </tr>
+            ` : ""}
+            ${socialTrimmed ? `
+            <tr>
+              <td style="padding: 10px 0; border-bottom: 1px solid #e8e4df; color: #7a7068;">Social / Link</td>
+              <td style="padding: 10px 0; border-bottom: 1px solid #e8e4df;">
+                ${/^https?:\/\//i.test(socialTrimmed)
+                  ? `<a href="${escapeHtml(socialTrimmed)}" style="color: #A9540F;">${escapeHtml(socialTrimmed)}</a>`
+                  : escapeHtml(socialTrimmed)}
+              </td>
             </tr>
             ` : ""}
             ${message ? `

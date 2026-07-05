@@ -45,6 +45,7 @@ export function RegisterClient() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
+  const [social, setSocial] = useState("");
   const [loading, setLoading] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [error, setError] = useState("");
@@ -58,7 +59,7 @@ export function RegisterClient() {
     const res = await fetch("/api/register-interest", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ name, email, phone }),
+      body: JSON.stringify({ name, email, phone, social }),
     });
 
     const data = await res.json();
@@ -116,16 +117,25 @@ export function RegisterClient() {
               ✦
             </div>
             <h1
-              className="text-[clamp(34px,6vw,56px)] font-light text-[#1a1510] mb-6 leading-[1.1]"
+              className="text-[clamp(30px,5vw,48px)] font-light text-[#1a1510] mb-8 leading-[1.15]"
               style={{ fontFamily: "var(--font-serif)" }}
             >
-              You&apos;re on the <em className="italic text-[#A9540F]">list</em>
+              Thank you for your <em className="italic text-[#A9540F]">interest</em>
             </h1>
-            <p className="text-[15px] leading-[1.85] text-[#1a1510] opacity-65 max-w-[440px] mx-auto">
-              Thank you for your interest. We&apos;ll be in touch when the Portal
-              is ready to welcome you.
-            </p>
-            <div className="mt-10">
+            <div className="text-[15px] leading-[1.9] text-[#1a1510] opacity-80 max-w-[480px] mx-auto space-y-4">
+              <p>
+                We are reviewing your application. If accepted you will receive
+                information how to enter the Portal by email.
+              </p>
+              <p>It usually takes up to 48 hours.</p>
+              <p
+                className="italic text-[#A9540F] opacity-90 pt-2"
+                style={{ fontFamily: "var(--font-serif)" }}
+              >
+                Looking forward to welcoming you.
+              </p>
+            </div>
+            <div className="mt-12">
               <Link href="/" className="btn-ghost">
                 Back to Home
               </Link>
@@ -213,6 +223,25 @@ export function RegisterClient() {
                     onChange={(e) => setPhone(e.target.value)}
                     className="w-full bg-white/40 border border-[rgba(26,21,16,0.12)] rounded-none px-4 py-3 text-[15px] font-light text-[#1a1510] outline-none focus:border-[#A9540F] transition-colors placeholder:text-[#5d544a]/50"
                     placeholder="+1 234 567 8900"
+                  />
+                </div>
+
+                <div className="space-y-1.5">
+                  <label
+                    htmlFor="social"
+                    className="text-[10px] tracking-[0.2em] uppercase text-[#5d544a]"
+                  >
+                    Most-used Social or Link
+                  </label>
+                  <input
+                    id="social"
+                    type="text"
+                    inputMode="url"
+                    autoComplete="url"
+                    value={social}
+                    onChange={(e) => setSocial(e.target.value)}
+                    className="w-full bg-white/40 border border-[rgba(26,21,16,0.12)] rounded-none px-4 py-3 text-[15px] font-light text-[#1a1510] outline-none focus:border-[#A9540F] transition-colors placeholder:text-[#5d544a]/50"
+                    placeholder="LinkedIn, Instagram, website, etc."
                   />
                 </div>
 
