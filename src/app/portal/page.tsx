@@ -132,11 +132,11 @@ function PortalCta({
       onClick={() => trackEnterPortal(source)}
       className={
         variant === "enter"
-          ? "btn-enter relative z-[1] !text-[#E0E0E0] hover:!text-white"
+          ? "btn-enter relative z-[1]"
           : "btn-ghost !opacity-100"
       }
     >
-      {children}
+      <span className="btn-label">{children}</span>
     </a>
   );
 }
@@ -169,7 +169,7 @@ function CopySection({
       </AnimatedSection>
       <AnimatedSection delay={0.1}>
         <h2
-          className="text-[clamp(36px,5vw,52px)] font-normal leading-[1.08] text-[#1a1510] mb-7 tracking-[-0.01em]"
+          className="portal-section-title text-[clamp(36px,5vw,52px)] font-normal leading-[1.08] text-[#1a1510] mb-7 tracking-[-0.01em]"
           style={{ fontFamily: "var(--font-serif)" }}
         >
           {title}
@@ -196,7 +196,7 @@ function PullQuote({
   return (
     <AnimatedSection delay={0.3}>
       <div
-        className={`mt-13 p-7 md:p-9 border-l-2 border-[#A9540F] bg-[rgba(169,84,15,0.06)] ${className}`}
+        className={`mt-13 p-7 md:p-10 border-l-2 border-[#000000] bg-white ${className}`}
       >
         <p
           className="text-[clamp(17px,2.3vw,22px)] font-light italic leading-[1.55] text-[#1a1510]"
@@ -204,7 +204,7 @@ function PullQuote({
         >
           &ldquo;{quote}&rdquo;
         </p>
-        <cite className="block mt-3 not-italic text-[10px] tracking-[0.2em] uppercase text-[#A9540F]">
+        <cite className="block mt-4 not-italic text-[10px] tracking-[0.2em] uppercase text-[#A9540F] opacity-70">
           · {cite}
         </cite>
       </div>
@@ -226,7 +226,7 @@ export default function PortalPage() {
   return (
     <>
       <main
-        className="min-h-screen text-[#1a1510]"
+        className="portal-page min-h-screen text-[#1a1510]"
         style={{
           background: `
             radial-gradient(ellipse 70% 45% at 18% 5%, rgba(169,84,15,0.08) 0%, transparent 60%),
@@ -251,13 +251,14 @@ export default function PortalPage() {
           <a
             href={STRIPE_CHECKOUT_URL}
             onClick={() => trackEnterPortal("hero")}
-            className="text-[11px] tracking-[0.2em] uppercase text-[#1a1510] opacity-70 no-underline hover:opacity-100 hover:text-[#A9540F] transition-all"
+            className="absolute right-6 sm:static whitespace-nowrap text-[9px] tracking-[0.16em] sm:text-[11px] sm:tracking-[0.2em] uppercase text-[#1a1510] opacity-70 no-underline hover:opacity-100 hover:text-[#A9540F] transition-all"
           >
-            Enter the Portal
+            <span className="sm:hidden">Enter</span>
+            <span className="hidden sm:inline">Enter the Portal</span>
           </a>
         </nav>
 
-        <section className="relative z-[1] min-h-screen flex flex-col items-center justify-end px-8 pt-[100px] pb-[120px] text-center overflow-hidden">
+        <section className="relative z-[1] min-h-screen flex flex-col items-center justify-end px-8 pt-[100px] pb-[132px] md:pb-[168px] text-center overflow-hidden">
           <div
             className="absolute inset-0 pointer-events-none"
             style={{
@@ -266,7 +267,10 @@ export default function PortalPage() {
             }}
           />
 
-          <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[400px] h-[520px] pointer-events-none">
+          <div
+            className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[400px] h-[520px] pointer-events-none"
+            style={{ zIndex: 1 }}
+          >
             <div className="absolute inset-0 rounded-t-[200px] border border-[rgba(169,84,15,0.22)] opacity-0 animate-[archIn_2.8s_ease_0.4s_forwards]" />
             <div className="absolute inset-[18px] rounded-t-[182px] border border-[rgba(26,21,16,0.1)] opacity-0 animate-[archIn_2.8s_ease_0.7s_forwards]" />
             <div className="absolute inset-0 rounded-t-[200px] overflow-hidden z-0">
@@ -283,20 +287,23 @@ export default function PortalPage() {
             <div className="absolute inset-0 rounded-t-[200px] bg-gradient-to-b from-[rgba(169,84,15,0.05)] to-transparent opacity-0 animate-[archIn_3s_ease_0.5s_forwards]" />
           </div>
 
-          <div className="absolute bottom-[532px] left-0 right-0 text-center whitespace-nowrap z-[2] text-[10px] tracking-[0.28em] uppercase text-[#A9540F] opacity-80 animate-[fadeUp_1s_ease_both_0.2s]">
+          <div className="absolute bottom-[532px] left-0 right-0 text-center whitespace-nowrap z-[2] text-[10px] tracking-[0.28em] uppercase text-[#A9540F] opacity-80">
             Aelia Kos presents
           </div>
 
           <h1
-            className="relative z-[2] text-[clamp(52px,8.5vw,90px)] font-light leading-[0.9] tracking-[-0.025em] text-[#E0E0E0] mt-5 animate-[fadeUp_1s_ease_both_0.45s]"
-            style={{ fontFamily: "var(--font-serif)" }}
+            className="absolute left-0 right-0 bottom-[300px] z-[2] text-[clamp(52px,8.5vw,90px)] font-light leading-[0.9] tracking-[-0.025em] text-[#E0E0E0]"
+            style={{ fontFamily: "var(--font-serif)", bottom: 300, zIndex: 3 }}
           >
             Universe
             <br />
             <em className="italic text-[#A9540F]">Portal</em>
           </h1>
 
-          <div className="relative z-[2] flex flex-col items-center mt-[22px] animate-[fadeUp_1s_ease_both_0.7s]">
+          <div
+            className="absolute left-0 right-0 z-[2] flex flex-col items-center"
+            style={{ bottom: 226, zIndex: 3 }}
+          >
             <span className="text-[11px] tracking-[0.18em] font-light text-[#C0C0C0]">
               A living membership
             </span>
@@ -308,11 +315,14 @@ export default function PortalPage() {
             </span>
           </div>
 
-          <div className="relative z-[2] mt-[26px] animate-[fadeUp_1s_ease_both_0.9s]">
+          <div
+            className="hero-enter absolute left-0 right-0 z-[2]"
+            style={{ bottom: 140, zIndex: 3 }}
+          >
             <PortalCta source="hero">Enter the Portal</PortalCta>
           </div>
 
-          <div className="absolute bottom-7 left-0 right-0 flex flex-col items-center gap-[7px] z-[2] animate-[fadeUp_1s_ease_both_1.2s]">
+          <div className="absolute bottom-7 left-0 right-0 flex flex-col items-center gap-[7px] z-[2]">
             <span className="text-[9px] tracking-[0.26em] uppercase text-[#E0E0E0] opacity-50">
               Discover
             </span>
@@ -619,10 +629,10 @@ export default function PortalPage() {
             </AnimatedSection>
             <AnimatedSection delay={0.15}>
               <div
-                className="text-[42px] font-light text-[#1a1510] mb-[18px] leading-[1.1] tracking-[0.03em]"
+                className="inline-block bg-white px-3.5 py-1.5 shadow-[0_0_0_4px_#ffffff] text-[42px] font-light text-[#1a1510] mb-[18px] leading-[1.1] tracking-[0.03em]"
                 style={{ fontFamily: "var(--font-serif)" }}
               >
-                Aelia <em className="italic text-[#A9540F]">Kos</em>
+                Aelia <em className="italic text-[#1a1510]">Kos</em>
               </div>
               <div className="text-[15px] leading-[1.85] text-[#1a1510] max-w-[540px] space-y-3.5">
                 <p>
@@ -702,7 +712,7 @@ export default function PortalPage() {
           </AnimatedSection>
           <AnimatedSection delay={0.1}>
             <h2
-              className="relative z-[1] text-[clamp(32px,5vw,48px)] font-light text-[#1a1510] mb-4"
+              className="portal-section-title relative z-[1] text-[clamp(32px,5vw,48px)] font-light text-[#1a1510] mb-4"
               style={{ fontFamily: "var(--font-serif)" }}
             >
               Begin your
@@ -841,7 +851,7 @@ export default function PortalPage() {
             ✦
           </div>
           <h1
-            className="text-[clamp(34px,6vw,60px)] font-light text-[#1a1510] mb-[22px] leading-[1.1]"
+            className="portal-success-title text-[clamp(34px,6vw,60px)] font-light text-[#1a1510] mb-[22px] leading-[1.1]"
             style={{ fontFamily: "var(--font-serif)" }}
           >
             You have entered
