@@ -658,6 +658,62 @@ export default function PortalPage() {
               </div>
             </AnimatedSection>
           </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-[1fr_1.7fr] gap-15 items-start mt-20">
+            <AnimatedSection>
+              <div className="relative max-w-[240px] md:max-w-none">
+                <Image
+                  src="/yasmina-ellins.png"
+                  alt="Yasmina Ellins"
+                  width={300}
+                  height={386}
+                  loading="eager"
+                  className="w-full aspect-[3/4] object-cover object-center relative z-[1] contrast-[1.05] saturate-[0.88]"
+                />
+                <div className="absolute top-3.5 left-3.5 -right-3.5 -bottom-3.5 border border-[rgba(169,84,15,0.22)] pointer-events-none" />
+              </div>
+            </AnimatedSection>
+            <AnimatedSection delay={0.15}>
+              <div
+                className="inline-block bg-white px-3.5 py-1.5 shadow-[0_0_0_4px_#ffffff] text-[42px] font-light text-[#1a1510] mb-[18px] leading-[1.1] tracking-[0.03em]"
+                style={{ fontFamily: "var(--font-serif)" }}
+              >
+                Yasmina <em className="italic text-[#1a1510]">Ellins</em>
+              </div>
+              <div className="text-[15px] leading-[1.85] text-[#1a1510] max-w-[540px] space-y-3.5">
+                <p>
+                  Yasmina Ellins is a visionary catalyst, storyteller, and
+                  musician who brings the world&apos;s most extraordinary
+                  founders, artists, and cultural leaders together, expanding
+                  their influence, their opportunities, and their power to turn
+                  audacious dreams into reality.
+                </p>
+                <p>
+                  Once a painfully shy girl who hid in the library to avoid
+                  speaking to her classmates, she typed &ldquo;how to get
+                  charisma&rdquo; into Google at sixteen and sparked a lifelong
+                  transformation. Today she curates rooms most people don&apos;t
+                  know exist, including the second Royal Ball in France since
+                  the Revolution, held at the Palace of Versailles, and the
+                  Maverick NEXT Impact Award, which she co-created on Sir
+                  Richard Branson&apos;s private island. People in her orbit have
+                  been mentored by an Oscar-winning director, landed a dream
+                  role in a Disney movie, and befriended with a queen.
+                </p>
+                <p>
+                  She is the founder of Golden Thread Alliances, a Cambridge
+                  graduate, a TEDx speaker, a bestselling co-author with the
+                  Founder of Reebok, a polyglot and a classically trained
+                  musician and singer.
+                </p>
+                <p>
+                  Whether through music, storytelling, or bringing the right
+                  people into the same room, Yasmina believes connection is the
+                  true catalyst for limitless impact.
+                </p>
+              </div>
+            </AnimatedSection>
+          </div>
         </section>
 
         <Divider />
