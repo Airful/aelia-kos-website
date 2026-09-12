@@ -292,7 +292,7 @@ export default function PortalPage() {
           </div>
 
           <h1
-            className="absolute left-0 right-0 bottom-[300px] z-[2] text-[clamp(52px,8.5vw,90px)] font-light leading-[0.9] tracking-[-0.025em] text-[#E0E0E0]"
+            className="absolute left-1/2 bottom-[300px] z-[2] w-[min(360px,calc(100vw-72px))] -translate-x-1/2 text-[clamp(50px,6.2vw,72px)] font-light leading-[0.95] tracking-[0] text-[#E0E0E0]"
             style={{ fontFamily: "var(--font-serif)", bottom: 300, zIndex: 3 }}
           >
             Universe
