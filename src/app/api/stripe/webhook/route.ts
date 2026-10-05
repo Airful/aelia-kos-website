@@ -92,9 +92,10 @@ async function upsertPortalSubscriberContact({
 
   const normalizedEmail = email.trim().toLowerCase();
   const { first_name, last_name } = splitName(name);
-  // "member" is the tag Aelia's dynamic Portal Members list keys on; the app's
-  // daily Stripe sync removes it again when every subscription has lapsed.
-  const tags = ["Portal Membership", "Subscribed", "Stripe Subscriber", "member"];
+  // "Portal Member" is the tag Aelia's dynamic Portal Members list keys on; the
+  // app's daily Stripe sync removes it again when every subscription has lapsed.
+  // (Not the bare "member" — legacy GSP imports already use that for UAK applications.)
+  const tags = ["Portal Membership", "Subscribed", "Stripe Subscriber", "Portal Member"];
   const today = new Date().toISOString().split("T")[0];
   const noteEntry = [
     `[${today} · Portal Subscription] Confirmed subscription via Stripe.`,
