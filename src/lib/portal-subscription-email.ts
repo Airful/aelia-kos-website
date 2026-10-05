@@ -6,8 +6,12 @@ type SubscriberDetails = {
   subscriptionId?: string | null;
 };
 
+// The Portal's workspace join link (platform.universeclub.ai → Invite → join link).
+// The old `/signup?ref=…&workspace=…` referral format is no longer honoured by the
+// platform: without an invite token it drops into the public Universe join and the
+// subscriber lands in the Universe Club space instead of The Portal (ENG-739).
 export const PORTAL_INVITE_URL =
-  "https://platform.universeclub.ai/signup?ref=KDIPC8MR&workspace=445cedb2-5ce8-4989-86ca-8f09c6a16a8f";
+  "https://platform.universeclub.ai/j/ff1594eb530daf1a69fc9fa216c320be";
 
 function escapeHtml(value: string): string {
   return value
