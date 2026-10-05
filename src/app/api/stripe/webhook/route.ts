@@ -92,7 +92,9 @@ async function upsertPortalSubscriberContact({
 
   const normalizedEmail = email.trim().toLowerCase();
   const { first_name, last_name } = splitName(name);
-  const tags = ["Portal Membership", "Subscribed", "Stripe Subscriber"];
+  // "member" is the tag Aelia's dynamic Portal Members list keys on; the app's
+  // daily Stripe sync removes it again when every subscription has lapsed.
+  const tags = ["Portal Membership", "Subscribed", "Stripe Subscriber", "member"];
   const today = new Date().toISOString().split("T")[0];
   const noteEntry = [
     `[${today} · Portal Subscription] Confirmed subscription via Stripe.`,
@@ -134,6 +136,8 @@ async function upsertPortalSubscriberContact({
       .update({
         ...(first_name ? { first_name } : {}),
         ...(last_name ? { last_name } : {}),
+        ...(customerId ? { stripe_customer_id: customerId } : {}),
+        type: "member",
         status: "active",
         source: "stripe",
         tags: mergeTags(existing.tags as string[] | null, tags),
@@ -152,6 +156,7 @@ async function upsertPortalSubscriberContact({
     first_name,
     last_name,
     email: normalizedEmail,
+    ...(customerId ? { stripe_customer_id: customerId } : {}),
     type: "member",
     status: "active",
     source: "stripe",

@@ -81,7 +81,9 @@ export function buildPortalWelcomeEmailHtml(name?: string | null): string {
               <tr>
                 <td style="padding:0 40px 32px 40px;">
                   <p style="margin:0 0 4px 0; font-size:15px; line-height:1.6; font-weight:bold; color:#1a1510;">Save the date</p>
-                  <p style="margin:0; font-size:15px; line-height:1.6; color:#5c554e;">Monthly Collective Intelligence Call, hosted by me every 17th of each month on Zoom. (Calendar invite sent separately.)</p>
+                  <p style="margin:0 0 12px 0; font-size:15px; line-height:1.6; color:#5c554e;">Monthly Collective Intelligence Call, hosted by Aelia Kos every 17th of each month on Zoom.</p>
+                  <p style="margin:0 0 12px 0; font-size:15px; line-height:1.6; color:#5c554e;">Every second Thursday of the month, Yasmina Ellins is hosting the “Beautiful Becoming”.</p>
+                  <p style="margin:0; font-size:15px; line-height:1.6; color:#5c554e;">(Calendar invites sent separately for both sessions.)</p>
                 </td>
               </tr>
               <tr>
@@ -131,7 +133,11 @@ Short sessions to release old patterns and activate what's been dormant.
 https://youtube.com/playlist?list=PLwSCVx_RsgsDYbKY1gVRZNWmrYSCGJWZg&si=qQYm08imonKDIzRc
 
 SAVE THE DATE
-Monthly Collective Intelligence Call, hosted by me every 17th of each month on Zoom. (Calendar invite sent separately.)
+Monthly Collective Intelligence Call, hosted by Aelia Kos every 17th of each month on Zoom.
+
+Every second Thursday of the month, Yasmina Ellins is hosting the “Beautiful Becoming”.
+
+(Calendar invites sent separately for both sessions.)
 
 I am glad you are here. You chose well. Now settle in.
 
