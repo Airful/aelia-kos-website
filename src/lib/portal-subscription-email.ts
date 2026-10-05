@@ -27,8 +27,9 @@ export function getSubscriberFirstName(name?: string | null): string {
   return firstName || "there";
 }
 
-export function buildPortalWelcomeEmailHtml(name?: string | null): string {
+export function buildPortalWelcomeEmailHtml(name?: string | null, accessUrl: string = PORTAL_INVITE_URL): string {
   const greetingName = escapeHtml(getSubscriberFirstName(name));
+  const accessHref = escapeHtml(accessUrl);
 
   return `
     <!DOCTYPE html>
@@ -72,7 +73,7 @@ export function buildPortalWelcomeEmailHtml(name?: string | null): string {
                 <td style="padding:0 40px 24px 40px;">
                   <p style="margin:0 0 4px 0; font-size:15px; line-height:1.6; font-weight:bold; color:#1a1510;">Activate your Universe AI</p>
                   <p style="margin:0 0 6px 0; font-size:15px; line-height:1.6; color:#5c554e;">Your synchronicity engine, available 24/7, surfacing who to meet at the right time.</p>
-                  <a href="${PORTAL_INVITE_URL}" style="font-size:15px; line-height:1.6; color:#1a1510; text-decoration:underline;">Access it here</a>
+                  <a href="${accessHref}" style="font-size:15px; line-height:1.6; color:#1a1510; text-decoration:underline;">Access it here</a>
                 </td>
               </tr>
               <tr>
@@ -110,7 +111,7 @@ export function buildPortalWelcomeEmailHtml(name?: string | null): string {
   `;
 }
 
-export function buildPortalWelcomeEmailText(name?: string | null): string {
+export function buildPortalWelcomeEmailText(name?: string | null, accessUrl: string = PORTAL_INVITE_URL): string {
   const greetingName = getSubscriberFirstName(name);
 
   return `Dear ${greetingName},
@@ -130,7 +131,7 @@ https://aeliakos.com/book-a-universe-connection-session
 
 ACTIVATE YOUR UNIVERSE AI
 Your synchronicity engine, available 24/7, surfacing who to meet at the right time.
-${PORTAL_INVITE_URL}
+${accessUrl}
 
 WATCH THE RECORDED TRANSMISSIONS
 Short sessions to release old patterns and activate what's been dormant.

@@ -3,10 +3,12 @@ import { createClient } from "@supabase/supabase-js";
 import { Resend } from "resend";
 import Stripe from "stripe";
 import {
+  PORTAL_INVITE_URL,
   buildPortalSubscriptionNotificationHtml,
   buildPortalWelcomeEmailHtml,
   buildPortalWelcomeEmailText,
 } from "@/lib/portal-subscription-email";
+import { requestPortalInvite } from "@/lib/portal-invite";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
@@ -201,6 +203,15 @@ async function handleCheckoutSessionCompleted(
     subscriptionId,
   });
 
+  // Personal Portal invite bound to the paying email (Universe Club ENG-740).
+  // Falls back to the shared join link if the platform cannot be reached, so
+  // the welcome email always goes out.
+  const invite = await requestPortalInvite({ email, name, customerId });
+  const accessUrl =
+    invite?.status === "already_member"
+      ? invite.loginUrl
+      : invite?.inviteUrl ?? PORTAL_INVITE_URL;
+
   await Promise.all([
     resend.emails.send({
       from: "Universe Portal <noreply@aeliakos.com>",
@@ -220,8 +231,8 @@ async function handleCheckoutSessionCompleted(
       to: email,
       replyTo: notifyEmail,
       subject: "Welcome to Universe Portal",
-      html: buildPortalWelcomeEmailHtml(name),
-      text: buildPortalWelcomeEmailText(name),
+      html: buildPortalWelcomeEmailHtml(name, accessUrl),
+      text: buildPortalWelcomeEmailText(name, accessUrl),
     }),
   ]);
 }
