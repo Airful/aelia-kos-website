@@ -52,6 +52,12 @@ function stripeId(
   return value.id;
 }
 
+/** Drop a tag by name, case-insensitively, without touching anything else. */
+function withoutTag(tags: string[], name: string): string[] {
+  const wanted = name.toLowerCase();
+  return tags.filter((tag) => tag.trim().toLowerCase() !== wanted);
+}
+
 function splitName(name?: string | null) {
   const parts = name?.trim().split(/\s+/).filter(Boolean) ?? [];
   return {
@@ -143,7 +149,9 @@ async function upsertPortalSubscriberContact({
         type: "member",
         status: "active",
         source: "stripe",
-        tags: mergeTags(existing.tags as string[] | null, tags),
+        // A re-subscriber was tagged "Former Member" by the app's daily sync
+        // when they lapsed; they are a member again as of this checkout.
+        tags: withoutTag(mergeTags(existing.tags as string[] | null, tags), "Former Member"),
         notes: updatedNotes,
       })
       .eq("id", existing.id);
