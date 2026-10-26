@@ -714,6 +714,57 @@ export default function PortalPage() {
               </div>
             </AnimatedSection>
           </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-[1fr_1.7fr] gap-15 items-start mt-20">
+            <AnimatedSection>
+              <div className="relative max-w-[240px] md:max-w-none">
+                <Image
+                  src="/isabel-knight.jpg"
+                  alt="Isabel Knight"
+                  width={300}
+                  height={367}
+                  loading="eager"
+                  className="w-full aspect-[3/4] object-cover object-center relative z-[1] contrast-[1.05] saturate-[0.88]"
+                />
+                <div className="absolute top-3.5 left-3.5 -right-3.5 -bottom-3.5 border border-[rgba(169,84,15,0.22)] pointer-events-none" />
+              </div>
+            </AnimatedSection>
+            <AnimatedSection delay={0.15}>
+              <div
+                className="inline-block bg-white px-3.5 py-1.5 shadow-[0_0_0_4px_#ffffff] text-[42px] font-light text-[#1a1510] mb-[18px] leading-[1.1] tracking-[0.03em]"
+                style={{ fontFamily: "var(--font-serif)" }}
+              >
+                Isabel <em className="italic text-[#1a1510]">Knight</em>
+              </div>
+              <div className="text-[15px] leading-[1.85] text-[#1a1510] max-w-[540px] space-y-3.5">
+                <p>
+                  Isabel Knight is an investor, entrepreneur, business coach and
+                  author with over 30 years&apos; experience across investment
+                  management, business and property investment. A former
+                  Investment Director at Credit Suisse, she is the author of{" "}
+                  <em>
+                    The F Word: A Modern Guide to Finance, Freedom, and Female
+                    Power
+                  </em>
+                  .
+                </p>
+                <p>
+                  Her work explores the relationship between money, identity
+                  and the choices we make about how we use our resources. She
+                  believes true wealth encompasses both our inner lives and our
+                  material wealth, and that understanding money is an important
+                  part of being able to direct it consciously.
+                </p>
+                <p>
+                  Through Conscious Capital Conversations, Isabel brings
+                  together practical financial knowledge, fresh perspectives and
+                  meaningful action, helping people make more informed choices
+                  about how they build wealth, direct their capital and shape
+                  the future they want to create.
+                </p>
+              </div>
+            </AnimatedSection>
+          </div>
         </section>
 
         <Divider />
